@@ -1,0 +1,11 @@
+//
+// Prefix header for all source files of the 'Mahima' target in the 'Mahima' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+	#import "ModuleViewController.h"
+    #import "PSTCollectionView.h"
+
+#endif

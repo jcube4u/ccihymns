@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/warnermusic/!svn/ver/214/trunk/Classes/TouchXML
+END
+CXMLNode.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/warnermusic/!svn/ver/8/trunk/Classes/TouchXML/CXMLNode.h
+END
+CXMLDocument_PrivateExtensions.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/warnermusic/!svn/ver/8/trunk/Classes/TouchXML/CXMLDocument_PrivateExtensions.h
+END
+CXMLElement.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/warnermusic/!svn/ver/8/trunk/Classes/TouchXML/CXMLElement.h
+END
+CXMLNode_XPathExtensions.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/warnermusic/!svn/ver/8/trunk/Classes/TouchXML/CXMLNode_XPathExtensions.h
+END
+CXMLNode.m
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/warnermusic/!svn/ver/214/trunk/Classes/TouchXML/CXMLNode.m
+END
+CXMLDocument_PrivateExtensions.m
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/warnermusic/!svn/ver/8/trunk/Classes/TouchXML/CXMLDocument_PrivateExtensions.m
+END
+CXMLDocument.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/warnermusic/!svn/ver/8/trunk/Classes/TouchXML/CXMLDocument.h
+END
+CXMLElement.m
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/warnermusic/!svn/ver/8/trunk/Classes/TouchXML/CXMLElement.m
+END
+CXMLNode_XPathExtensions.m
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/warnermusic/!svn/ver/8/trunk/Classes/TouchXML/CXMLNode_XPathExtensions.m
+END
+CXMLNode_PrivateExtensions.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/warnermusic/!svn/ver/8/trunk/Classes/TouchXML/CXMLNode_PrivateExtensions.h
+END
+TouchXML.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/warnermusic/!svn/ver/8/trunk/Classes/TouchXML/TouchXML.h
+END
+CXMLDocument.m
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/warnermusic/!svn/ver/8/trunk/Classes/TouchXML/CXMLDocument.m
+END
+CXMLNode_PrivateExtensions.m
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/warnermusic/!svn/ver/184/trunk/Classes/TouchXML/CXMLNode_PrivateExtensions.m
+END
