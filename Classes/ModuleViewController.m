@@ -75,7 +75,7 @@ webPageLink;//,delegate;
             CGRect frame =self.view.frame;
             frame.size.height = result.height;
             self.view.frame =  frame;
-            self.view.backgroundColor = [UIColor grayColor];
+            //self.view.backgroundColor = [UIColor grayColor];
         }
     }
     

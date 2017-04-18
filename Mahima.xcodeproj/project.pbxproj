@@ -28,7 +28,6 @@
 		468895C4174D8E83000F2A44 /* arrow-left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 468895C0174D8E81000F2A44 /* arrow-left@2x.png */; };
 		468895C5174D8E83000F2A44 /* arrow-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 468895C1174D8E82000F2A44 /* arrow-right.png */; };
 		468895C6174D8E83000F2A44 /* arrow-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 468895C2174D8E82000F2A44 /* arrow-right@2x.png */; };
-		468895CC174D9443000F2A44 /* MenuSelectionViewControlleriphone5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 468895CB174D9443000F2A44 /* MenuSelectionViewControlleriphone5.xib */; };
 		46AA9575172077E300C0C35F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 46AA9574172077E300C0C35F /* Default.png */; };
 		46B7E2F1175F27AA00E03C9E /* menu~568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46B7E2F0175F27A900E03C9E /* menu~568h@2x.png */; };
 		46B7E2F3175F282F00E03C9E /* MenuSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B7E2F2175F282F00E03C9E /* MenuSelectionViewController.m */; };
@@ -124,7 +123,6 @@
 		468895C0174D8E81000F2A44 /* arrow-left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow-left@2x.png"; path = "Resources/arrow-left@2x.png"; sourceTree = SOURCE_ROOT; };
 		468895C1174D8E82000F2A44 /* arrow-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow-right.png"; path = "Resources/arrow-right.png"; sourceTree = SOURCE_ROOT; };
 		468895C2174D8E82000F2A44 /* arrow-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow-right@2x.png"; path = "Resources/arrow-right@2x.png"; sourceTree = SOURCE_ROOT; };
-		468895CB174D9443000F2A44 /* MenuSelectionViewControlleriphone5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuSelectionViewControlleriphone5.xib; sourceTree = "<group>"; };
 		46AA9574172077E300C0C35F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		46B7E2F0175F27A900E03C9E /* menu~568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu~568h@2x.png"; path = "Resources/menu~568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		46B7E2F2175F282F00E03C9E /* MenuSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuSelectionViewController.m; sourceTree = "<group>"; };
@@ -371,7 +369,6 @@
 				464D48D516A630D9008091D9 /* MenuSelectionViewController.h */,
 				46B7E2F2175F282F00E03C9E /* MenuSelectionViewController.m */,
 				4650FED116A71CB3008948EC /* MenuSelectionViewController.xib */,
-				468895CB174D9443000F2A44 /* MenuSelectionViewControlleriphone5.xib */,
 			);
 			name = MenuSelection;
 			sourceTree = "<group>";
@@ -785,7 +782,6 @@
 				468895C4174D8E83000F2A44 /* arrow-left@2x.png in Resources */,
 				468895C5174D8E83000F2A44 /* arrow-right.png in Resources */,
 				468895C6174D8E83000F2A44 /* arrow-right@2x.png in Resources */,
-				468895CC174D9443000F2A44 /* MenuSelectionViewControlleriphone5.xib in Resources */,
 				466592A51752A353003B7E0E /* Default-568h@2x.png in Resources */,
 				466592A61752A353003B7E0E /* Default@2x.png in Resources */,
 				466592A8175378DF003B7E0E /* hymnsDB26_5.sqlite in Resources */,

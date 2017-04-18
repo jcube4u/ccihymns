@@ -122,8 +122,9 @@
 		
 		CGFloat leftInset = (self.view.frame.size.width - (maxHorizontalButtons * buttonFrame.size.width) -
 							 ((maxHorizontalButtons - 1) * borderSpacing)) / 2.0;
-		
-		buttonController.view.frame = CGRectMake(leftInset + module.modulePosition.x * (buttonFrame.size.width + borderSpacing),
+        CGFloat xPosition = leftInset + module.modulePosition.x * (buttonFrame.size.width + borderSpacing);
+        NSLog(@"Left Inset %f pos x %f",leftInset, xPosition);
+		buttonController.view.frame = CGRectMake(xPosition,
 												 topInset + module.modulePosition.y * (buttonFrame.size.height + borderSpacing),
 												 buttonFrame.size.width,
 												 buttonFrame.size.height);

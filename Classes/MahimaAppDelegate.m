@@ -73,7 +73,7 @@ NSString * const kSessionKey			= @"sessionKey";
 	
 	[[NSUserDefaults standardUserDefaults] setObject: nil forKey: kSessionKey];
 	
-	[[UIApplication sharedApplication] setStatusBarStyle: UIStatusBarStyleBlackOpaque];
+	//[[UIApplication sharedApplication] setStatusBarStyle: UIStatusBarStyleBlackOpaque];
 	
     CGFloat topInset = self.window.frame.size.height * 0.2125f;
 
