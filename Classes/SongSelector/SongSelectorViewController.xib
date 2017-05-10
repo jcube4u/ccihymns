@@ -28,7 +28,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <collectionView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="43">
-                    <rect key="frame" x="10" y="64" width="349" height="525"/>
+                    <rect key="frame" x="10" y="104" width="349" height="472"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="53">
                         <size key="itemSize" width="50" height="50"/>
@@ -49,8 +49,8 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83">
-                    <rect key="frame" x="7" y="606" width="74" height="56"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83">
+                    <rect key="frame" x="12" y="614" width="48" height="30"/>
                     <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="15"/>
                     <size key="titleShadowOffset" width="2" height="2"/>
                     <state key="normal" title="Emenu">
@@ -64,8 +64,8 @@
                         <action selector="popToRoot:" destination="-1" eventType="touchUpInside" id="139"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="248">
-                    <rect key="frame" x="152" y="606" width="56" height="56"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="248">
+                    <rect key="frame" x="152" y="616" width="30" height="30"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="15"/>
                     <size key="titleShadowOffset" width="2" height="2"/>
@@ -80,8 +80,8 @@
                         <action selector="popToRootWithLanguageToggle:" destination="-1" eventType="touchUpInside" id="274"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="264" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86">
-                    <rect key="frame" x="87" y="606" width="62" height="56"/>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="264" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86">
+                    <rect key="frame" x="87" y="614" width="33" height="30"/>
                     <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="15"/>
                     <size key="titleShadowOffset" width="2" height="2"/>
                     <state key="normal" title="Back">
@@ -101,13 +101,13 @@
                 <constraint firstItem="248" firstAttribute="leading" secondItem="65" secondAttribute="leading" constant="152" id="00s-C8-Fah"/>
                 <constraint firstItem="86" firstAttribute="leading" secondItem="65" secondAttribute="leading" constant="87" id="HIq-0C-JBJ"/>
                 <constraint firstAttribute="trailing" secondItem="43" secondAttribute="trailing" constant="16" id="S4q-po-2Z7"/>
-                <constraint firstItem="43" firstAttribute="top" secondItem="65" secondAttribute="top" constant="64" id="Spu-bd-goQ"/>
+                <constraint firstItem="43" firstAttribute="top" secondItem="65" secondAttribute="top" constant="104" id="Spu-bd-goQ"/>
                 <constraint firstItem="43" firstAttribute="leading" secondItem="65" secondAttribute="leading" constant="10" id="Zce-sW-EiI"/>
-                <constraint firstItem="83" firstAttribute="leading" secondItem="65" secondAttribute="leading" constant="7" id="bQB-aO-ruM"/>
-                <constraint firstAttribute="bottom" secondItem="248" secondAttribute="bottom" constant="5" id="eXJ-VX-mqm"/>
-                <constraint firstAttribute="bottom" secondItem="83" secondAttribute="bottom" constant="5" id="ed3-rV-AMN"/>
-                <constraint firstAttribute="bottom" secondItem="43" secondAttribute="bottom" constant="78" id="nYV-4f-eV1"/>
-                <constraint firstAttribute="bottom" secondItem="86" secondAttribute="bottom" constant="5" id="vgS-c1-Ekf"/>
+                <constraint firstItem="83" firstAttribute="leading" secondItem="65" secondAttribute="leading" constant="12" id="bQB-aO-ruM"/>
+                <constraint firstAttribute="bottom" secondItem="248" secondAttribute="bottom" constant="21" id="eXJ-VX-mqm"/>
+                <constraint firstAttribute="bottom" secondItem="83" secondAttribute="bottom" constant="23" id="ed3-rV-AMN"/>
+                <constraint firstAttribute="bottom" secondItem="43" secondAttribute="bottom" constant="91" id="nYV-4f-eV1"/>
+                <constraint firstAttribute="bottom" secondItem="86" secondAttribute="bottom" constant="23" id="vgS-c1-Ekf"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <point key="canvasLocation" x="34.5" y="74.5"/>

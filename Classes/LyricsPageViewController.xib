@@ -34,15 +34,18 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         </imageView>
                         <webView opaque="NO" multipleTouchEnabled="YES" alpha="0.99295777082443237" tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18">
-                            <rect key="frame" x="7" y="74" width="360" height="492"/>
+                            <rect key="frame" x="7" y="74" width="360" height="523"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             <dataDetectorType key="dataDetectorTypes"/>
                             <connections>
                                 <outlet property="delegate" destination="1" id="35"/>
                             </connections>
                         </webView>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41">
-                            <rect key="frame" x="5" y="605" width="70" height="56"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41">
+                            <rect key="frame" x="5" y="605" width="70" height="55.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="bPf-4i-Zft"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <size key="titleShadowOffset" width="2" height="2"/>
                             <state key="normal" title="Emenu">
@@ -71,22 +74,12 @@
                                 <action selector="pop:" destination="-1" eventType="touchUpInside" id="47"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42">
-                            <rect key="frame" x="274" y="614" width="39" height="40"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" image="arrow-left.png">
-                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <state key="highlighted">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="movePrev:" destination="-1" eventType="touchUpInside" id="52"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43">
                             <rect key="frame" x="315" y="612" width="42" height="42"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="No7-4P-eIU"/>
+                                <constraint firstAttribute="width" constant="42" id="ubl-co-g5a"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <state key="normal" image="arrow-right.png">
                                 <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -187,12 +180,29 @@
                                 <action selector="setFavorites:" destination="-1" eventType="touchUpInside" id="57"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42">
+                            <rect key="frame" x="281" y="612" width="42" height="42"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="RfO-8n-XdA"/>
+                                <constraint firstAttribute="width" constant="42" id="VFf-JH-WTX"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" image="arrow-left.png">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="movePrev:" destination="-1" eventType="touchUpInside" id="52"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="15" firstAttribute="top" secondItem="38" secondAttribute="top" id="2cX-VV-kvF"/>
                         <constraint firstAttribute="trailing" secondItem="43" secondAttribute="trailing" constant="18" id="2wB-hw-VBr"/>
-                        <constraint firstItem="42" firstAttribute="leading" secondItem="62" secondAttribute="trailing" constant="27" id="84k-3S-oPo"/>
                         <constraint firstAttribute="bottom" secondItem="15" secondAttribute="bottom" id="9Eq-Ku-hyO"/>
                         <constraint firstItem="54" firstAttribute="firstBaseline" secondItem="46" secondAttribute="baseline" id="CvD-Ra-yzv"/>
                         <constraint firstItem="59" firstAttribute="bottom" secondItem="54" secondAttribute="bottom" id="FIW-WF-9zt"/>
@@ -200,22 +210,24 @@
                         <constraint firstItem="62" firstAttribute="baseline" secondItem="41" secondAttribute="baseline" id="HCJ-SV-ADU"/>
                         <constraint firstAttribute="trailing" secondItem="18" secondAttribute="trailing" constant="8" id="Htm-5k-3bq"/>
                         <constraint firstItem="62" firstAttribute="top" secondItem="41" secondAttribute="top" id="ICK-y6-A0o"/>
+                        <constraint firstItem="42" firstAttribute="centerY" secondItem="62" secondAttribute="centerY" id="Ikg-Wd-uJ1"/>
                         <constraint firstItem="45" firstAttribute="leading" secondItem="38" secondAttribute="leading" constant="2" id="Im2-OK-iFJ"/>
                         <constraint firstAttribute="trailing" secondItem="54" secondAttribute="trailing" constant="65" id="LKn-D0-ffQ"/>
                         <constraint firstItem="46" firstAttribute="leading" secondItem="38" secondAttribute="leading" constant="29" id="MpG-Qw-Hzx"/>
                         <constraint firstItem="59" firstAttribute="leading" secondItem="38" secondAttribute="leading" constant="-17" id="NAQ-4A-XZ9"/>
-                        <constraint firstItem="62" firstAttribute="top" secondItem="18" secondAttribute="bottom" constant="39" id="Nlk-SP-xbo"/>
+                        <constraint firstItem="62" firstAttribute="top" secondItem="18" secondAttribute="bottom" constant="8" id="Nlk-SP-xbo"/>
                         <constraint firstItem="18" firstAttribute="top" secondItem="59" secondAttribute="bottom" constant="4" id="RHA-wg-UDW"/>
                         <constraint firstItem="54" firstAttribute="firstBaseline" secondItem="46" secondAttribute="firstBaseline" id="S8J-vK-nqb"/>
                         <constraint firstItem="62" firstAttribute="centerY" secondItem="43" secondAttribute="centerY" id="UWk-w6-Xs4"/>
-                        <constraint firstAttribute="trailing" secondItem="42" secondAttribute="trailing" constant="62" id="c6q-Qh-AW7"/>
                         <constraint firstItem="18" firstAttribute="leading" secondItem="38" secondAttribute="leading" constant="7" id="cNA-fM-WUd"/>
                         <constraint firstAttribute="bottom" secondItem="62" secondAttribute="bottom" constant="6" id="cdx-t2-Ih4"/>
-                        <constraint firstAttribute="bottom" secondItem="18" secondAttribute="bottom" constant="101" id="cy8-0u-C7O"/>
+                        <constraint firstAttribute="bottom" secondItem="18" secondAttribute="bottom" constant="70" id="cy8-0u-C7O"/>
                         <constraint firstItem="15" firstAttribute="leading" secondItem="38" secondAttribute="leading" id="d0E-IA-cIj"/>
                         <constraint firstItem="18" firstAttribute="top" secondItem="38" secondAttribute="top" constant="74" id="dUw-yn-ATI"/>
                         <constraint firstItem="62" firstAttribute="leading" secondItem="38" secondAttribute="leading" constant="145" id="ezq-yE-sPY"/>
+                        <constraint firstItem="43" firstAttribute="leading" secondItem="42" secondAttribute="trailing" constant="-8" id="fWP-o6-sYV"/>
                         <constraint firstItem="46" firstAttribute="top" secondItem="45" secondAttribute="top" id="fZ8-iV-gWU"/>
+                        <constraint firstItem="44" firstAttribute="leading" secondItem="41" secondAttribute="trailing" constant="31" id="h57-Xh-nfJ"/>
                         <constraint firstItem="54" firstAttribute="top" secondItem="38" secondAttribute="top" constant="25" id="knp-N0-HDs"/>
                         <constraint firstItem="46" firstAttribute="bottom" secondItem="45" secondAttribute="bottom" id="mWB-fo-Njs"/>
                         <constraint firstItem="62" firstAttribute="firstBaseline" secondItem="41" secondAttribute="firstBaseline" id="nqX-Yc-dW1"/>
