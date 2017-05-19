@@ -8,13 +8,8 @@
 	<string>CCC i-Hymns</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIconFiles</key>
-	<array>
-		<string>Icon.png</string>
-		<string>Icon@2x.png</string>
-		<string>Icon-Small.png</string>
-		<string>Icon-Small@2x.png</string>
-	</array>
+	<key>CFBundleIcons~ipad</key>
+	<dict/>
 	<key>CFBundleIdentifier</key>
 	<string>com.mahima.cccHymns</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -28,22 +23,22 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.2</string>
+	<string>1.0.4</string>
 	<key>Entitlements</key>
 	<string>dist.plist</string>
 	<key>InfoPageContent</key>
 	<array>
 		<dict>
 			<key>Data</key>
-			<string>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;
+			<string>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
 &lt;html&gt;
 &lt;head&gt;
-  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
-  &lt;meta http-equiv=&quot;Content-Style-Type&quot; content=&quot;text/css&quot;&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
+  &lt;meta http-equiv="Content-Style-Type" content="text/css"&gt;
   &lt;title&gt;Privacy Policy&lt;/title&gt;
-  &lt;meta name=&quot;Generator&quot; content=&quot;Cocoa HTML Writer&quot;&gt;
-  &lt;meta name=&quot;CocoaVersion&quot; content=&quot;1138.51&quot;&gt;
-  &lt;style type=&quot;text/css&quot;&gt;
+  &lt;meta name="Generator" content="Cocoa HTML Writer"&gt;
+  &lt;meta name="CocoaVersion" content="1138.51"&gt;
+  &lt;style type="text/css"&gt;
     p.p0 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; line-height: 12.0px; font: 15.0px Arial}
     p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; line-height: 12.0px; font: 15.0px Arial}
     p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; line-height: 12.0px; font: 15.0px Arial; min-height: 15.0px}
@@ -54,23 +49,23 @@
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-&lt;p class=&quot;p0&quot;&gt;&lt;b&gt;Instructions&lt;/b&gt;&lt;/p&gt;
-&lt;p class=&quot;p1&quot;&gt;&lt;span class=&quot;s1&quot;&gt;&lt;b&gt;=&lt;/b&gt;&lt;/span&gt; Favourite, top Right; click to store much-loved songs&lt;/p&gt;
-&lt;p class=&quot;p1&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&lt;b&gt;A&lt;/b&gt;&lt;/span&gt;&lt;b&gt; &lt;/b&gt;&lt;span class=&quot;s1&quot;&gt;&lt;b&gt;A,&lt;/b&gt;&lt;/span&gt; Top left; click to increase/decrease the fonts&lt;/p&gt;
-&lt;p class=&quot;p1&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&lt;b&gt;Emenu,&lt;/b&gt;&lt;/span&gt; Bottom left; click to go to English Menu&lt;/p&gt;
-&lt;p class=&quot;p1&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&lt;b&gt;E,&lt;/b&gt;&lt;/span&gt; Bottom centre; click to go to English Menu&lt;/p&gt;
-&lt;p class=&quot;p1&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&lt;b&gt;Ymenu,&lt;/b&gt;&lt;/span&gt; Bottom left; click to go to Yoruba Menu&lt;/p&gt;
-&lt;p class=&quot;p1&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&lt;b&gt;Y,&lt;/b&gt;&lt;/span&gt; Bottom centre; click to go to Yoruba Menu&lt;/p&gt;
-&lt;p class=&quot;p1&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&lt;b&gt;&amp;lt; &amp;gt;,&lt;/b&gt;&lt;/span&gt; Bottom right; click to go to next/previous page&lt;/p&gt;
-&lt;p class=&quot;p2&quot;&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p class=&quot;p3&quot;&gt;The need for CCC Hymns (English &amp;amp; Yoruba) to be electronically accessible world wide has been long awaited and the quest to make it a reality outweighed the time, labour and money invested into this project. Hence, this is a “not-for-profit” venture and money realised will be ploughed back into further developments. Chillo System Solutions hope to launch the French, German and Spanish version very soon; your donations are welcome to make it real and you shall be highly recognised by our Lord Jesus as you invest to propagate His words&lt;/p&gt;
-&lt;p class=&quot;p3&quot;&gt;Presently, we cannot guaranty error free Hymns, but we can assure you of our unrelenting effort to put things right and to regularly update the Application&lt;/p&gt;
-&lt;p class=&quot;p3&quot;&gt;Kindly send your genuine and concise comments/feedbacks or any corrections identified to&lt;br&gt; &lt;a href=&quot;mailto:adebesin.benson@ourcss.com&quot;&gt;&lt;span class=&quot;s3&quot;&gt;adebesin.benson@ourcss.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p class=&quot;p2&quot;&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p class=&quot;p1&quot;&gt;&lt;b&gt;Appreciation&lt;/b&gt;&lt;/p&gt;
-&lt;p class=&quot;p3&quot;&gt;Heartily thanks to my fathers in the Lord, Sup. Evang. Julius Shebioba and Sup. Evang. Milton Job (MBE) of (C.C.C. Elephant &amp;amp; Castle Parish, London) for their prayers, fatherly advice and support&lt;/p&gt;
-&lt;p class=&quot;p3&quot;&gt;Sup. Evang. Smart Ogunbunmi, you are appreciated for your financial support, valuable tips and professional advice&lt;/p&gt;
-&lt;p class=&quot;p3&quot;&gt;Copyright © 2013 Chillo System Solutions, All Rights Reserved&lt;/p&gt;
+&lt;p class="p0"&gt;&lt;b&gt;Instructions&lt;/b&gt;&lt;/p&gt;
+&lt;p class="p1"&gt;&lt;span class="s1"&gt;&lt;b&gt;=&lt;/b&gt;&lt;/span&gt; Favourite, top Right; click to store much-loved songs&lt;/p&gt;
+&lt;p class="p1"&gt;&lt;span class="s2"&gt;&lt;b&gt;A&lt;/b&gt;&lt;/span&gt;&lt;b&gt; &lt;/b&gt;&lt;span class="s1"&gt;&lt;b&gt;A,&lt;/b&gt;&lt;/span&gt; Top left; click to increase/decrease the fonts&lt;/p&gt;
+&lt;p class="p1"&gt;&lt;span class="s2"&gt;&lt;b&gt;Emenu,&lt;/b&gt;&lt;/span&gt; Bottom left; click to go to English Menu&lt;/p&gt;
+&lt;p class="p1"&gt;&lt;span class="s2"&gt;&lt;b&gt;E,&lt;/b&gt;&lt;/span&gt; Bottom centre; click to go to English Menu&lt;/p&gt;
+&lt;p class="p1"&gt;&lt;span class="s2"&gt;&lt;b&gt;Ymenu,&lt;/b&gt;&lt;/span&gt; Bottom left; click to go to Yoruba Menu&lt;/p&gt;
+&lt;p class="p1"&gt;&lt;span class="s2"&gt;&lt;b&gt;Y,&lt;/b&gt;&lt;/span&gt; Bottom centre; click to go to Yoruba Menu&lt;/p&gt;
+&lt;p class="p1"&gt;&lt;span class="s2"&gt;&lt;b&gt;&amp;lt; &amp;gt;,&lt;/b&gt;&lt;/span&gt; Bottom right; click to go to next/previous page&lt;/p&gt;
+&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p class="p3"&gt;The need for CCC Hymns (English &amp;amp; Yoruba) to be electronically accessible world wide has been long awaited and the quest to make it a reality outweighed the time, labour and money invested into this project. Hence, this is a “not-for-profit” venture and money realised will be ploughed back into further developments. Chillo System Solutions hope to launch the French, German and Spanish version very soon; your donations are welcome to make it real and you shall be highly recognised by our Lord Jesus as you invest to propagate His words&lt;/p&gt;
+&lt;p class="p3"&gt;Presently, we cannot guaranty error free Hymns, but we can assure you of our unrelenting effort to put things right and to regularly update the Application&lt;/p&gt;
+&lt;p class="p3"&gt;Kindly send your genuine and concise comments/feedbacks or any corrections identified to&lt;br&gt; &lt;a href="mailto:adebesin.benson@ourcss.com"&gt;&lt;span class="s3"&gt;adebesin.benson@ourcss.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p class="p2"&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p class="p1"&gt;&lt;b&gt;Appreciation&lt;/b&gt;&lt;/p&gt;
+&lt;p class="p3"&gt;Heartily thanks to my fathers in the Lord, Sup. Evang. Julius Shebioba and Sup. Evang. Milton Job (MBE) of (C.C.C. Elephant &amp;amp; Castle Parish, London) for their prayers, fatherly advice and support&lt;/p&gt;
+&lt;p class="p3"&gt;Sup. Evang. Smart Ogunbunmi, you are appreciated for your financial support, valuable tips and professional advice&lt;/p&gt;
+&lt;p class="p3"&gt;Copyright © 2013 Chillo System Solutions, All Rights Reserved&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </string>

@@ -50,6 +50,7 @@
 		46FCF58B16B8601B00753A5E /* NibCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46FCF58A16B8601B00753A5E /* NibCell.xib */; };
 		46FCF59516B89FBD00753A5E /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FCF59316B89FBD00753A5E /* FavoritesViewController.m */; };
 		46FCF59616B89FBD00753A5E /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46FCF59416B89FBD00753A5E /* FavoritesViewController.xib */; };
+		622B66A01EC9A5A30015504D /* Icon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 622B669F1EC9A5A30015504D /* Icon-40@3x.png */; };
 		6274FBD810B0C36D00607950 /* FFSAPICaller.m in Sources */ = {isa = PBXBuildFile; fileRef = 6274FBB310B0C36D00607950 /* FFSAPICaller.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6274FBD910B0C36D00607950 /* ModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6274FBB810B0C36D00607950 /* ModuleViewController.m */; };
 		6274FBDA10B0C36D00607950 /* ModuleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6274FBB910B0C36D00607950 /* ModuleViewController.xib */; };
@@ -191,6 +192,7 @@
 		46FCF59216B89FBD00753A5E /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoritesViewController.h; path = FavoritesController/FavoritesViewController.h; sourceTree = "<group>"; };
 		46FCF59316B89FBD00753A5E /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoritesViewController.m; path = FavoritesController/FavoritesViewController.m; sourceTree = "<group>"; };
 		46FCF59416B89FBD00753A5E /* FavoritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FavoritesViewController.xib; path = FavoritesController/FavoritesViewController.xib; sourceTree = "<group>"; };
+		622B669F1EC9A5A30015504D /* Icon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@3x.png"; sourceTree = "<group>"; };
 		6274FBB210B0C36D00607950 /* FFSAPICaller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFSAPICaller.h; sourceTree = "<group>"; };
 		6274FBB310B0C36D00607950 /* FFSAPICaller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFSAPICaller.m; sourceTree = "<group>"; };
 		6274FBB710B0C36D00607950 /* ModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleViewController.h; sourceTree = "<group>"; };
@@ -416,7 +418,7 @@
 				4650FEE916A8612B008948EC /* MenuSelection */,
 				4650FEEC16A86157008948EC /* Lyrics Page View */,
 				4650FEED16A86178008948EC /* Categories View */,
-				6274FBC310B0C36D00607950 /* SongList */,
+				6274FBC310B0C36D00607950 /* Search Hymn */,
 				6274FBBF10B0C36D00607950 /* InfoViewController */,
 				46B7E30A175FCA7200E03C9E /* Song Selector */,
 			);
@@ -639,14 +641,14 @@
 			name = InfoViewController;
 			sourceTree = "<group>";
 		};
-		6274FBC310B0C36D00607950 /* SongList */ = {
+		6274FBC310B0C36D00607950 /* Search Hymn */ = {
 			isa = PBXGroup;
 			children = (
 				6274FBC610B0C36D00607950 /* SongListViewController.h */,
 				6274FBC710B0C36D00607950 /* SongListViewController.m */,
 				6295C5F910B2B78900FC62CE /* SongListViewController.xib */,
 			);
-			name = SongList;
+			name = "Search Hymn";
 			sourceTree = "<group>";
 		};
 		6274FCDB10B0D4FE00607950 /* Categories */ = {
@@ -681,6 +683,7 @@
 				466592A41752A353003B7E0E /* Default@2x.png */,
 				46DBF56416FB0CEA000B05A9 /* ccbackground.png */,
 				468895BF174D8E80000F2A44 /* arrow-left.png */,
+				622B669F1EC9A5A30015504D /* Icon-40@3x.png */,
 				468895C0174D8E81000F2A44 /* arrow-left@2x.png */,
 				468895C1174D8E82000F2A44 /* arrow-right.png */,
 				468895C2174D8E82000F2A44 /* arrow-right@2x.png */,
@@ -782,6 +785,7 @@
 				46FCF59616B89FBD00753A5E /* FavoritesViewController.xib in Resources */,
 				465F879216EAA83300D0C3C4 /* iTunesArtwork.png in Resources */,
 				46DBF56516FB0CEA000B05A9 /* ccbackground.png in Resources */,
+				622B66A01EC9A5A30015504D /* Icon-40@3x.png in Resources */,
 				46AA9575172077E300C0C35F /* Default.png in Resources */,
 				468895BE174D8E08000F2A44 /* ccbackground@2x.png in Resources */,
 				468895C3174D8E83000F2A44 /* arrow-left.png in Resources */,
@@ -862,6 +866,8 @@
 				ALTERNATE_GROUP = "";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = dist.plist;
 				CODE_SIGN_IDENTITY = "iPhone Developer: jimmy benson (7D73P7W2VK)";
@@ -902,6 +908,8 @@
 				ALTERNATE_GROUP = "";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = dist.plist;
 				CODE_SIGN_IDENTITY = "iPhone Developer: jimmy benson (7D73P7W2VK)";
@@ -959,6 +967,8 @@
 				ALTERNATE_GROUP = "";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = dist.plist;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: J Benson (9583TPSZ4Z)";
@@ -1049,6 +1059,8 @@
 				ALTERNATE_GROUP = "";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = dist.plist;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: J Benson (9583TPSZ4Z)";

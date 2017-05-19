@@ -80,12 +80,14 @@ static id _appInfo = nil;
 -(void)setDefaultsValueForKey:(NSString *)key withValue:(id)value
 {
     [[NSUserDefaults standardUserDefaults] setObject:value forKey:key];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 -(NSString*)toggleSelectedlanguage
 {
     NSString *languageSelected =  [[AppInfo sharedInfo] getDefaultsValueForKey:kSavedLanguage];
     
+    NSLog(@"Language selected %@ ",languageSelected);
     if(languageSelected)
     {
         if([languageSelected isEqualToString:kLanguageEnglish])
@@ -104,7 +106,7 @@ static id _appInfo = nil;
 -(NSInteger)getSelectedLanguageId
 {
     NSString *languageSelected =  [[AppInfo sharedInfo] getDefaultsValueForKey:kSavedLanguage];
- 
+    NSLog(@"getSelectedLanguageId selected %@ ",languageSelected);
     NSInteger languageId  = ([languageSelected caseInsensitiveCompare:kLanguageEnglish] == NSOrderedSame) ? kLanguageEnglishID:([languageSelected caseInsensitiveCompare:kLanguageYoruba]== NSOrderedSame ? kLanguageYorubaID : NSNotFound);
     return languageId;
  }

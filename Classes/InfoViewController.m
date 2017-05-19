@@ -47,14 +47,10 @@ static NSString * urlInfoText = kInfoUrlApi;
 	
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlInfoText]]];
     
-//    displayedObjects = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"InfoPageContent"];
-//    NSDictionary *dict = [displayedObjects  objectAtIndex:0];
-//    NSString  *htmlContent = [dict objectForKey:@"Data"];
-//    [webView loadHTMLString:htmlContent baseURL:nil];
-    
     NSInteger langId = [[AppInfo sharedInfo] getSelectedLanguageId];
-    self.buttonToggleLanguage.titleLabel.text = (langId == kLanguageYorubaID) ? @"E" : @"Y";
-    ;
+    NSString *languageText = (langId == kLanguageYorubaID) ? @"E" : @"Y";
+    [self.buttonToggleLanguage setTitle:languageText forState:UIControlStateNormal];
+    
     NSString *title =  (langId == kLanguageYorubaID) ? @"Y" : @"E";
     [self.buttonMenu setTitle:title forState:UIControlStateNormal];
 

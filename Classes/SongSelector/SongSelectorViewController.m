@@ -53,7 +53,9 @@ NSString *kCellID = @"cellID";                          // UICollectionViewCell 
     /* end of nib-based cells block*/
     NSString *languageSelected =  [[AppInfo sharedInfo] getDefaultsValueForKey:kSavedLanguage];
     
-    self.buttonToggleLanguage.titleLabel.text = ([languageSelected isEqualToString:kLanguageYoruba]) ? @"E" : @"Y";
+    NSInteger langId = [[AppInfo sharedInfo] getSelectedLanguageId];
+    NSString *languageText = (langId == kLanguageYorubaID) ? @"E" : @"Y";
+    [self.buttonToggleLanguage setTitle:languageText forState:UIControlStateNormal];
     
     NSString *title =  ([languageSelected isEqualToString:kLanguageYoruba]) ? @"Ymenu" : @"Emenu";
     [self.buttonMenu setTitle:title forState:UIControlStateNormal];

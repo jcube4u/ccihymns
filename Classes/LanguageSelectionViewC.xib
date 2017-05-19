@@ -11,8 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LanguageSelectionViewC">
             <connections>
-                <outlet property="buttonMenu" destination="9" id="22"/>
-                <outlet property="buttonToggleLanguage" destination="15" id="21"/>
+                <outlet property="buttonMenu" destination="9" id="Tmq-r0-DJv"/>
+                <outlet property="buttonToggleLanguage" destination="15" id="7lr-Rz-dgI"/>
                 <outlet property="listTable" destination="4" id="5"/>
                 <outlet property="view" destination="1" id="6"/>
             </connections>

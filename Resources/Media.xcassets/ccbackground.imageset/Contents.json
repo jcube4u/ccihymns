@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "ccbackground.png",
+      "filename" : "ccbackground 320x480.png",
       "scale" : "1x"
     },
     {
@@ -12,6 +12,7 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "ccbackground@3x.png",
       "scale" : "3x"
     }
   ],

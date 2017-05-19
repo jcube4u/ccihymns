@@ -43,8 +43,9 @@
     self.titleLabel.text =[self isCategoryController] ? [self.categoryTitle capitalizedString] :  SEARCH_HYMN_TITLE;
     
     NSInteger langId = [[AppInfo sharedInfo] getSelectedLanguageId];
-    self.languageButton.titleLabel.text = (langId == kLanguageYorubaID) ? @"E" : @"Y";
-;
+    NSString *languageText = (langId == kLanguageYorubaID) ? @"E" : @"Y";
+    [self.buttonToggleLanguage setTitle:languageText forState:UIControlStateNormal];
+    
     NSString *title =  (langId == kLanguageYorubaID) ? @"Ymenu" : @"Emenu";
     [self.buttonMenu setTitle:title forState:UIControlStateNormal];
 	

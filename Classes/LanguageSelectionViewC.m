@@ -61,15 +61,22 @@
 	
     [self loadLanguagesFromDB];
     
-    NSInteger langId = [[AppInfo sharedInfo] getSelectedLanguageId];
-    self.buttonToggleLanguage.titleLabel.text = (langId == kLanguageYorubaID) ? @"E" : @"Y";
-    ;
-    NSString *title =  (langId == kLanguageYorubaID) ? @"Ymenu" : @"Emenu";
-    [self.buttonMenu setTitle:title forState:UIControlStateNormal];
+   
 
     
 	[self.listTable reloadData];
 
+}
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    NSInteger langId = [[AppInfo sharedInfo] getSelectedLanguageId];
+    NSString *languageText  = (langId == kLanguageYorubaID) ? @"E" : @"Y";
+    [self.buttonToggleLanguage setTitle:languageText forState:UIControlStateNormal];
+    ;
+    NSString *title =  (langId == kLanguageYorubaID) ? @"Ymenu" : @"Emenu";
+    [self.buttonMenu setTitle:title forState:UIControlStateNormal];
+    
 }
 
 -(IBAction)refreshAction:(id)sender

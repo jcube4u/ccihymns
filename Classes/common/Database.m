@@ -573,7 +573,7 @@
 				sqlite3_bind_int(sqlStmt, 1, languageId);
                 
 				DAssert((sqlite3_bind_parameter_count(sqlStmt) == column), @"Column count in prepared statement does not match the number of columns bound");
-                int row =0;
+//                int row =0;
 				while(sqlite3_step(sqlStmt) == SQLITE_ROW) {
                     
 					if (1)
