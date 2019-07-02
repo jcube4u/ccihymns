@@ -1,13 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment version="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -31,7 +29,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <imageView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="ccbackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="15">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="667"/>
                         </imageView>
                         <webView opaque="NO" multipleTouchEnabled="YES" alpha="0.99295777082443237" tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18">
                             <rect key="frame" x="7" y="74" width="360" height="523"/>
@@ -42,7 +40,7 @@
                             </connections>
                         </webView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41">
-                            <rect key="frame" x="5" y="605" width="70" height="55.5"/>
+                            <rect key="frame" x="3" y="605" width="70" height="55.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="70" id="bPf-4i-Zft"/>
                             </constraints>
@@ -60,7 +58,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44">
-                            <rect key="frame" x="106" y="605" width="33" height="56"/>
+                            <rect key="frame" x="104" y="605" width="35" height="56"/>
                             <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="15"/>
                             <size key="titleShadowOffset" width="2" height="2"/>
                             <state key="normal" title="Back">
@@ -250,7 +248,7 @@
                 <constraint firstAttribute="bottom" secondItem="38" secondAttribute="bottom" id="z9j-Lb-BDM"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
-            <point key="canvasLocation" x="34.5" y="54.5"/>
+            <point key="canvasLocation" x="50.000000000000007" y="36.495535714285715"/>
         </view>
     </objects>
     <resources>
@@ -258,9 +256,4 @@
         <image name="arrow-right.png" width="17" height="24"/>
         <image name="ccbackground.png" width="320" height="480"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
-    </simulatedMetricsContainer>
 </document>
