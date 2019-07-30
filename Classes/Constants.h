@@ -35,10 +35,13 @@
 //#define kUrlApi					@"http://www.ourcss.com/ccci-hymns/"
 //#define kInfoUrlApi				@"http://www.ourcss.com/ccci-hymns/info.html";
 
-#define kUrlApi					@"http://ourcss.com/mobile/iPhone/cccihymns/"
-#define kInfoUrlApi				@"http://ourcss.com/mobile/iPhone/cccihymns/info.html";
-#define kFileNameSongListEng			@"EnglishHymns.xml"
-#define kFileNameSongListYoruba			@"YourbaHymns1.xml"
+//#define kUrlApi					@"http://ourcss.com/mobile/iPhone/cccihymns/"
+//#define kInfoUrlApi				@"http://ourcss.com/mobile/iPhone/cccihymns/info.html";
+#define kUrlApi                    @"https://hayngels.com/ccihymns/1.0/"
+#define kInfoUrlApi                @"https://hayngels.com/ccihymns/1.0/info/info.html";
+
+#define kFileNameSongListEng			@"English.xml"
+#define kFileNameSongListYoruba			@"Yourba.xml"
 #define kFileNameSettings			@"settings.xml"
 
 
