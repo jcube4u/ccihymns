@@ -177,7 +177,7 @@
 		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 		cell.backgroundColor = [UIColor clearColor];
         
-        UILabel *numberLabel =  [[UILabel alloc] initWithFrame:CGRectMake(LEFT_TEXT_OFFSET_ITEM_NAME, 8, 208, 20)];
+        UILabel *numberLabel =  [[UILabel alloc] initWithFrame:CGRectMake(LEFT_TEXT_OFFSET_ITEM_NAME, 8, self.view.frame.size.width - (LEFT_TEXT_OFFSET_ITEM_NAME + 25), 20)];
 		numberLabel.backgroundColor = [UIColor clearColor];
 		numberLabel.textColor = [UIColor blackColor];
 		numberLabel.tag = 100;

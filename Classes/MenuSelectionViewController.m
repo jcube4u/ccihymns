@@ -46,8 +46,8 @@
 
     topInset = self.view.frame.size.height * 0.347f;
 
-    borderSpacing =  4.0;
-    maxHorizontalButtons =  3;
+    borderSpacing =  0.0;
+    maxHorizontalButtons =  1;
     
     if(!self.handler)
     {
@@ -57,11 +57,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
-    
-    CGRect titleFrame = CGRectMake(64.0f,70.0f,193.0f,36.0f);
-    titleFrame.origin.y =  self.view.frame.size.height * 0.2145f;
-    self.languageLabel.frame = titleFrame;
+    [super viewDidAppear:animated];    
     
     if(maxHorizontalButtons < 1)
         return;
@@ -120,14 +116,16 @@
        
 		CGRect buttonFrame = buttonController.view.frame;
 		
-		CGFloat leftInset = (self.view.frame.size.width - (maxHorizontalButtons * buttonFrame.size.width) -
-							 ((maxHorizontalButtons - 1) * borderSpacing)) / 2.0;
-        CGFloat xPosition = leftInset + module.modulePosition.x * (buttonFrame.size.width + borderSpacing);
-        NSLog(@"Left Inset %f pos x %f",leftInset, xPosition);
-		buttonController.view.frame = CGRectMake(xPosition,
-												 topInset + module.modulePosition.y * (buttonFrame.size.height + borderSpacing),
-												 buttonFrame.size.width,
-												 buttonFrame.size.height);
+//        CGFloat leftInset = (self.view.frame.size.width - (maxHorizontalButtons * buttonFrame.size.width) -
+//                             ((maxHorizontalButtons - 1) * borderSpacing)) / 2.0;
+//        CGFloat xPosition = leftInset + module.modulePosition.x * (buttonFrame.size.width + borderSpacing);
+//        NSLog(@"Left Inset %f pos x %f",leftInset, xPosition);
+//        buttonController.view.frame = CGRectMake(xPosition,
+//                                                 topInset + module.modulePosition.y * (buttonFrame.size.height + borderSpacing),
+//                                                 buttonFrame.size.width,
+//                                                 buttonFrame.size.height);
+        
+        [buttonController.view setCenter: CGPointMake(self.view.center.x, topInset + module.modulePosition.y * (buttonFrame.size.height + borderSpacing))];
 
 		buttonController.view.alpha = 0.0;
 		buttonController.view.tag = 100;
@@ -176,7 +174,7 @@
         self.activity= [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(140, 50, 50, 50)];
         self.activity.hidesWhenStopped = YES;
         self.activity.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-       self.activity.frame = CGRectMake(ACTIVITY_INDICATOR_LEFTOFFSET, ACTIVITY_INDICATOR_HEIGHT_OFFSET, ACTIVITY_INDICATOR_SIZE, ACTIVITY_INDICATOR_SIZE);
+       self.activity.center = self.view.center;
         
         [self.view addSubview: self.activity];
 
@@ -272,7 +270,7 @@
         [self loadCategoriesFromDB];
 		NSMutableArray *songList = [NSMutableArray array];
 		[[Database instance] loadAllSongs:songList withCategoryId:1];
-		DLog(@"%@",songList);
+		DLog(@" Songs List %@",songList);
         [self updateViewIfNeeded];
         
     }

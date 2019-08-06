@@ -46,7 +46,7 @@
 - (void)addActivityIndicator {
     activity= [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(125, 50, 30, 30)];
     activity.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
-    activity.frame = CGRectMake(ACTIVITY_INDICATOR_LEFTOFFSET, ACTIVITY_INDICATOR_HEIGHT_OFFSET, ACTIVITY_INDICATOR_SIZE, ACTIVITY_INDICATOR_SIZE);
+    activity.center = self.view.center;
     [activity startAnimating];
     [self.view addSubview:activity];
 }
@@ -165,13 +165,13 @@
 		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 		cell.backgroundColor = [UIColor clearColor];
         
-        UILabel *numberLabel =  [[UILabel alloc] initWithFrame:CGRectMake(LEFT_TEXT_OFFSET_ITEM_NAME, 8, 170, 20)];
+        UILabel *numberLabel =  [[UILabel alloc] initWithFrame:CGRectMake(LEFT_TEXT_OFFSET_ITEM_NAME, 8, self.view.frame.size.width - (25 + LEFT_TEXT_OFFSET_ITEM_NAME + 100), 20)];
 		numberLabel.backgroundColor = [UIColor clearColor];
 		numberLabel.textColor = [UIColor blackColor];
 		numberLabel.tag = 100;
 		[cell.contentView addSubview: numberLabel];
         
-        UILabel *rangeLabel =  [[UILabel alloc] initWithFrame:CGRectMake(175, 8, 70, 20)];
+        UILabel *rangeLabel =  [[UILabel alloc] initWithFrame:CGRectMake((self.view.frame.size.width - (25 + LEFT_TEXT_OFFSET_ITEM_NAME + 70)), 8, 70, 20)];
 		rangeLabel.backgroundColor = [UIColor clearColor];
 		rangeLabel.textColor = [UIColor blackColor];
         rangeLabel.textAlignment = NSTextAlignmentRight;

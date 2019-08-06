@@ -88,8 +88,8 @@ NSString * const kSessionKey			= @"sessionKey";
 	
     
 	moduleViewController = [[ModuleViewController alloc] initWithTopInset: topInset 
-															borderSpacing: 4.0
-													 maxHorizontalButtons: 3 
+															borderSpacing: 0.0
+													 maxHorizontalButtons: 1
                                                           modules: modules];
 	
     //UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:moduleViewController];
@@ -101,18 +101,18 @@ NSString * const kSessionKey			= @"sessionKey";
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
     {
         CGSize result = [[UIScreen mainScreen] bounds].size;
-        if(result.height == 480)
-        {
-            // iPhone Classic
-        }
-        if(result.height == 568)
-        {
-            // iPhone 5
-            CGRect frame =self.window.frame;
-            frame.size.height = result.height ;
-            self.window.frame =  frame;
-            self.window.backgroundColor = [UIColor yellowColor];
-        }
+//        if(result.height == 480)
+//        {
+//            // iPhone Classic
+//        }
+//        if(result.height == 568)
+//        {
+//            // iPhone 5
+//            CGRect frame =self.window.frame;
+//            frame.size.height = result.height ;
+//            self.window.frame =  frame;
+//            self.window.backgroundColor = [UIColor yellowColor];
+//        }
     }
     [window addSubview: moduleViewController.view];
     [window makeKeyAndVisible];
@@ -260,7 +260,7 @@ NSString * const kSessionKey			= @"sessionKey";
 	{
 		int elapsedTime = -[savedDate timeIntervalSinceNow];
 		/// Is the last loaded data older than a  30 days
-		if(elapsedTime > (24*60*60 *0))
+		if(elapsedTime > (24*60*60 *30))
 		{
 			refreshData = YES;
 		}

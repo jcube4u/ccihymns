@@ -61,23 +61,23 @@ webPageLink;//,delegate;
 
     [self performSelector:@selector(showMenu) withObject:nil afterDelay:0.5];
     
-    self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-    {
-        CGSize result = [[UIScreen mainScreen] bounds].size;
-        if(result.height == 480)
-        {
-            // iPhone Classic
-        }
-        if(result.height == 568)
-        {
-            // iPhone 5
-            CGRect frame =self.view.frame;
-            frame.size.height = result.height;
-            self.view.frame =  frame;
-            //self.view.backgroundColor = [UIColor grayColor];
-        }
-    }
+    //self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+//    {
+//        CGSize result = [[UIScreen mainScreen] bounds].size;
+//        if(result.height == 480)
+//        {
+//            // iPhone Classic
+//        }
+//        if(result.height == 568)
+//        {
+//            // iPhone 5
+//            CGRect frame =self.view.frame;
+//            frame.size.height = result.height;
+//            self.view.frame =  frame;
+//            //self.view.backgroundColor = [UIColor grayColor];
+//        }
+//    }
     
     
 }
@@ -284,6 +284,9 @@ webPageLink;//,delegate;
 
 - (void) layoutButtons
 {
+    UILayoutGuide *safeArea = self.view.safeAreaLayoutGuide;
+
+    
 	for (int i = 0; i < [modules count]; i++) {
 		Module * module = [modules objectAtIndex: i];
 		
@@ -298,16 +301,25 @@ webPageLink;//,delegate;
 
 		CGRect buttonFrame = buttonController.view.frame;
 		
-		CGFloat leftInset = (self.view.frame.size.width - (maxHorizontalButtons * buttonFrame.size.width) - 
-							 ((maxHorizontalButtons - 1) * borderSpacing)) / 2.0;
+		//CGFloat leftInset = (self.view.frame.size.width/2) - (maxHorizontalButtons * buttonFrame.size.width)/2.0;
 		
-		buttonController.view.frame = CGRectMake(leftInset + module.modulePosition.x * (buttonFrame.size.width + borderSpacing), 
-												 topInset + module.modulePosition.y * (buttonFrame.size.height + borderSpacing), 
-												 buttonFrame.size.width, 
-												 buttonFrame.size.height);
+		//buttonController.view.frame = CGRectMake(leftInset,
+//                                                 topInset + module.modulePosition.y * (buttonFrame.size.height + borderSpacing),
+//                                                 buttonFrame.size.width,
+//                                                 buttonFrame.size.height);
+        [buttonController.view setCenter: CGPointMake(self.view.center.x - 20, topInset + module.modulePosition.y * (buttonFrame.size.height + borderSpacing))];
+        
+//        NSLayoutConstraint *centerYConstraint =  [NSLayoutConstraint constraintWithItem:buttonController.view attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:buttonController.view attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:topInset + module.modulePosition.y * (buttonFrame.size.height + borderSpacing)];
+//        [NSLayoutConstraint activateConstraints:@[
+//                                                  //[buttonController.view.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
+//                                                 centerYConstraint]
+//                                                  ];
 		
 		buttonController.view.alpha = 0.0;
 		buttonController.view.tag = 100;
+        buttonController.view.backgroundColor = UIColor.clearColor;
+        
+        
 		[self.view addSubview: buttonController.view];
 		
 		buttonController = nil;

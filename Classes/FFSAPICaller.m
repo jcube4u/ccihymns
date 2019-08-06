@@ -397,6 +397,7 @@ static id _APICaller = nil;
 	
     NSArray * resultNodes = [rssParser nodesForXPath: [NSString stringWithFormat: @"//%@", rootNode] error: &error];
 	id queryResult = [self parseNodes: [[resultNodes lastObject] children] level: 0];
+    NSLog(@"Query Result %@",queryResult);
 	
 	return queryResult;
 }	
@@ -475,7 +476,8 @@ static id _APICaller = nil;
 		
 		if ([resultElement kind] == CXMLTextKind)
 				return [resultElement stringValue];
-	} 
+	}
+    NSLog(@"Query Result Obejct %@",resultObject);
 	return resultObject;
 }
 

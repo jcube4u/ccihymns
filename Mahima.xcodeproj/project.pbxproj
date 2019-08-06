@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -86,6 +86,7 @@
 		62AD7F4D1EA5697C000D350A /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 62AD7F4C1EA5697C000D350A /* libsqlite3.0.tbd */; };
 		62AD7F501EA56DAE000D350A /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62AD7F4F1EA56DAE000D350A /* Media.xcassets */; };
 		62AD7F521EA583E9000D350A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 62AD7F511EA583E9000D350A /* libc++.tbd */; };
+		62C3BBCA22F0455F00447E0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62C3BBC922F0455F00447E0A /* LaunchScreen.storyboard */; };
 		62D0585B10B0DB330065706B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D0585A10B0DB330065706B /* CoreLocation.framework */; };
 		62D0586C10B0DB960065706B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 62D0586710B0DB960065706B /* Icon.png */; };
 		62D8B36B11858DE5009F7804 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D8B36A11858DE5009F7804 /* MessageUI.framework */; };
@@ -255,6 +256,7 @@
 		62AD7F4C1EA5697C000D350A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		62AD7F4F1EA56DAE000D350A /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Resources/Media.xcassets; sourceTree = "<group>"; };
 		62AD7F511EA583E9000D350A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		62C3BBC922F0455F00447E0A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62D0585A10B0DB330065706B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		62D0586710B0DB960065706B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Images/Icon.png; sourceTree = "<group>"; };
 		62D8B36A11858DE5009F7804 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -352,6 +354,7 @@
 				6291B7AA10B74B27002A80FD /* dist.plist */,
 				62D0586710B0DB960065706B /* Icon.png */,
 				62AD7F4F1EA56DAE000D350A /* Media.xcassets */,
+				62C3BBC922F0455F00447E0A /* LaunchScreen.storyboard */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -752,7 +755,7 @@
 				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Mahima" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -808,6 +811,7 @@
 				466592A8175378DF003B7E0E /* hymnsDB26_5.sqlite in Resources */,
 				461AC48D175695D600CC3F75 /* refresh.png in Resources */,
 				62AD7F501EA56DAE000D350A /* Media.xcassets in Resources */,
+				62C3BBCA22F0455F00447E0A /* LaunchScreen.storyboard in Resources */,
 				461AC48E175695D600CC3F75 /* refresh@2x.png in Resources */,
 				46B7E2F1175F27AA00E03C9E /* menu~568h@2x.png in Resources */,
 				622B66AC1ECF25C50015504D /* Icon-76.png in Resources */,
@@ -879,7 +883,6 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = dist.plist;
 				CODE_SIGN_IDENTITY = "iPhone Developer: jimmy benson (7D73P7W2VK)";
@@ -897,7 +900,7 @@
 				INFOPLIST_FILE = "Mahima-Info.plist";
 				INSTALL_GROUP = "";
 				INSTALL_OWNER = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes\"",
@@ -921,7 +924,6 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = dist.plist;
 				CODE_SIGN_IDENTITY = "iPhone Developer: jimmy benson (7D73P7W2VK)";
@@ -937,7 +939,7 @@
 				INFOPLIST_FILE = "Mahima-Info.plist";
 				INSTALL_GROUP = "";
 				INSTALL_OWNER = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes\"",
@@ -980,7 +982,6 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = dist.plist;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: J Benson (9583TPSZ4Z)";
@@ -996,7 +997,7 @@
 				INFOPLIST_FILE = "Mahima-Info.plist";
 				INSTALL_GROUP = "";
 				INSTALL_OWNER = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes\"",
@@ -1072,7 +1073,6 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = dist.plist;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: J Benson (9583TPSZ4Z)";
@@ -1091,7 +1091,7 @@
 				INFOPLIST_FILE = "Mahima-Info.plist";
 				INSTALL_GROUP = "";
 				INSTALL_OWNER = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes\"",
