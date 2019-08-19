@@ -34,51 +34,51 @@ NSString * const kCloseModule = @"kCloseModule";
 webPageLink;//,delegate;
 @synthesize infoController = _infoController;
 
-- (id) initWithTopInset: (CGFloat) theTopInset 
-		  borderSpacing: (CGFloat) theBorderSpacing 
-   maxHorizontalButtons: (int) maxHorizButtons
-				modules: (NSArray *) theModules
-{
-	self = [super init];
-	if (self != nil) {
-		topInset = theTopInset;
-		borderSpacing = theBorderSpacing;
-		maxHorizontalButtons = maxHorizButtons;
-		modules = theModules;
-	}
-	return self;
-}
+//- (id) initWithTopInset: (CGFloat) theTopInset
+//          borderSpacing: (CGFloat) theBorderSpacing
+//   maxHorizontalButtons: (int) maxHorizButtons
+//                modules: (NSArray *) theModules
+//{
+//    self = [super init];
+//    if (self != nil) {
+//        topInset = theTopInset;
+//        borderSpacing = theBorderSpacing;
+//        maxHorizontalButtons = maxHorizButtons;
+//        modules = theModules;
+//    }
+//    return self;
+//}
 
 - (void)dealloc {
 	[[NSNotificationCenter defaultCenter] removeObserver: self];
 	modules = nil;
 }
 
+-(void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
+    topInset = self.view.frame.size.height * 0.355f;
+    borderSpacing = 1.0;
+    maxHorizontalButtons = 1;
+    
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //*********************************************************
+    //* Create array for modules and assign to module controller
+    //*********************************************************
+    
+//    NSMutableArray *mutableList = [self getModuleNames];
+//    self.modules = [[NSArray alloc] initWithArray:mutableList];;
 
+    
     [self performSelector:@selector(showMenu) withObject:nil afterDelay:0.5];
     
-    //self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-//    {
-//        CGSize result = [[UIScreen mainScreen] bounds].size;
-//        if(result.height == 480)
-//        {
-//            // iPhone Classic
-//        }
-//        if(result.height == 568)
-//        {
-//            // iPhone 5
-//            CGRect frame =self.view.frame;
-//            frame.size.height = result.height;
-//            self.view.frame =  frame;
-//            //self.view.backgroundColor = [UIColor grayColor];
-//        }
-//    }
-    
+    self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
 }
 
@@ -115,7 +115,7 @@ webPageLink;//,delegate;
 	{
 		int elapsedTime = -[savedDate timeIntervalSinceNow];
 		/// Is the last loaded data older than a  30 days
-		if(elapsedTime > (24*60*60 *1))
+		if(elapsedTime > (24*60*60 *30))
 		{
 			refreshData = YES;
 		}
@@ -139,13 +139,6 @@ webPageLink;//,delegate;
 				 [[NSUserDefaults standardUserDefaults] setObject:versionNum forKey:@"SavedListVersionNumber"];
 			}
 		}
-		if([centerText count] > 1)
-		{
-			srand(time((time_t *)NULL));
-			int randValue =  (rand() % ([centerText count]-1)) + 1;
-			centerTextLabel.text = [[centerText objectAtIndex:randValue] objectForKey:@"description"];
-		}
-			//releaseMapCities = YES;
 	}
 
 	if(refreshData)
@@ -259,7 +252,6 @@ webPageLink;//,delegate;
 	int posy = self.view.frame.origin.y; 
 	if(posy != 0)
 	{
-
 		[self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
 	}	
 	
@@ -284,9 +276,6 @@ webPageLink;//,delegate;
 
 - (void) layoutButtons
 {
-    UILayoutGuide *safeArea = self.view.safeAreaLayoutGuide;
-
-    
 	for (int i = 0; i < [modules count]; i++) {
 		Module * module = [modules objectAtIndex: i];
 		
@@ -294,26 +283,15 @@ webPageLink;//,delegate;
 		//* Create module border image view
 		//*******************************************************
 		ModuleButtonController * buttonController = [[ModuleButtonController alloc] initWithModuleLauncher: self
-																							   buttonImage: module.icon 
+																							   buttonImage: nil
 																									 label: module.title 
 																									   tag: i
                                                                                                   fontSize:28];
 
 		CGRect buttonFrame = buttonController.view.frame;
 		
-		//CGFloat leftInset = (self.view.frame.size.width/2) - (maxHorizontalButtons * buttonFrame.size.width)/2.0;
-		
-		//buttonController.view.frame = CGRectMake(leftInset,
-//                                                 topInset + module.modulePosition.y * (buttonFrame.size.height + borderSpacing),
-//                                                 buttonFrame.size.width,
-//                                                 buttonFrame.size.height);
-        [buttonController.view setCenter: CGPointMake(self.view.center.x - 20, topInset + module.modulePosition.y * (buttonFrame.size.height + borderSpacing))];
+        [buttonController.view setCenter: CGPointMake(self.view.superview.center.x, topInset + i * (buttonFrame.size.height + borderSpacing))];
         
-//        NSLayoutConstraint *centerYConstraint =  [NSLayoutConstraint constraintWithItem:buttonController.view attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:buttonController.view attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:topInset + module.modulePosition.y * (buttonFrame.size.height + borderSpacing)];
-//        [NSLayoutConstraint activateConstraints:@[
-//                                                  //[buttonController.view.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
-//                                                 centerYConstraint]
-//                                                  ];
 		
 		buttonController.view.alpha = 0.0;
 		buttonController.view.tag = 100;
@@ -371,7 +349,7 @@ webPageLink;//,delegate;
 //*******************************************************
 - (void) HandleInfoPage: (NSNotification *) notification
 {
-		[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+		//[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
 		[infoPageViewController.view removeFromSuperview];
 		infoPageViewController = nil;
 
@@ -390,9 +368,6 @@ webPageLink;//,delegate;
        
         self.infoController.delegate = self;
     }
-	CGRect frame = self.infoController.view.frame;
-    frame.origin.y = 20;;
-    self.infoController.view.frame = frame;
     
     [UIView transitionWithView:self.view duration:0.5
                        options:UIViewAnimationOptionTransitionCrossDissolve //change to whatever animation you like
@@ -417,6 +392,24 @@ webPageLink;//,delegate;
                     }
                     completion:nil];
   
+}
+
+#pragma mark Other methods
+- (NSMutableArray *) getModuleNames
+{
+    NSMutableArray * modulesMutable =  [[NSMutableArray alloc] init];
+    for (NSDictionary * moduleDict in [[NSBundle mainBundle] objectForInfoDictionaryKey: @"ModuleListLanguages"]) {
+        
+        position pos = {[[moduleDict objectForKey: @"positionX"] intValue], [[moduleDict objectForKey: @"positionY"] intValue]};
+        Module * module = [[Module alloc] initWithTitle: [moduleDict objectForKey: @"title"]
+                                                    url: [moduleDict objectForKey: kModuleUrl]
+                                                   icon: [UIImage imageNamed: [moduleDict objectForKey: @"icon"]]
+                                             controller: [moduleDict objectForKey: @"controller"]
+                                               position: pos];
+        [modulesMutable addObject: module];
+        module = nil;
+    }
+    return modulesMutable;
 }
 
 @end

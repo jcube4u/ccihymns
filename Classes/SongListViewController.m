@@ -21,6 +21,8 @@
 @property (nonatomic,strong) IBOutlet UIButton *buttonMenu;
 @property (nonatomic,strong) IBOutlet UIButton *buttonBack;
 @property (nonatomic,strong) IBOutlet UIButton *buttonToggleLanguage;
+@property (nonatomic) BOOL isSearching;
+//@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @end
 
 
@@ -28,8 +30,10 @@
 @synthesize titleArray,langCode,listTable,filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive;
 @synthesize categoryId = _categoryId;
 @synthesize categoryTitle = _categoryTitle;
-@synthesize  languageButton = _languageButton;
+@synthesize  buttonToggleLanguage = _buttonToggleLanguage;
 @synthesize buttonMenu = _buttonMenu;
+@synthesize searchController = _searchController;
+@synthesize searchBar = _searchBar;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,6 +43,7 @@
 	self.listTable.rowHeight = 40;
 	self.listTable.backgroundColor = [UIColor clearColor];
 	self.listTable.separatorColor = [UIColor clearColor];
+    self.isSearching = FALSE;
     
     self.titleLabel.text =[self isCategoryController] ? [self.categoryTitle capitalizedString] :  SEARCH_HYMN_TITLE;
     
@@ -55,21 +60,109 @@
     
     
     self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.titleArray count]];
+    
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.dimsBackgroundDuringPresentation = FALSE;
+    self.searchController.searchBar.delegate = self;
+    
+
+    
+    if (@available(iOS 11.0, *)) {
+        //self.navigationItem.searchController = searchController;
+        self.searchBar = self.searchController.searchBar;
+        self.searchBar.delegate = self;
+    } else {
+        self.listTable.tableHeaderView =  self.searchController.searchBar;
+    }
+    self.definesPresentationContext = true;
 	
         // restore search settings if they were saved in didReceiveMemoryWarning.
     if (self.savedSearchTerm)
 	{
-        [self.searchDisplayController setActive:self.searchWasActive];
-        [self.searchDisplayController.searchBar setSelectedScopeButtonIndex:self.savedScopeButtonIndex];
-        [self.searchDisplayController.searchBar setText:savedSearchTerm];
+
+        [self.searchController setActive:self.searchWasActive];
+        [self.searchController.searchBar setSelectedScopeButtonIndex:self.savedScopeButtonIndex];
+        [self.searchController.searchBar setText:savedSearchTerm];
+
         
         self.savedSearchTerm = nil;
     }
-    
 	
 	[self.listTable reloadData];
     
 }
+// return NO to not become first responder
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+    return YES;
+}
+
+// called when text starts editing
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    // adjust layout for keyboard display
+     //NSLog(@"searchBarTextDidEndEditing %lu",(unsigned long)self.filteredListContent.count);
+}
+
+// return NO to not resign first responder
+- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar
+{
+    // adjust layout for no keyboar
+    
+    return YES;
+}
+
+// called when text ends editing
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    
+    //NSLog(@"searchBarTextDidEndEditing %lu",(unsigned long)self.filteredListContent.count);
+    
+    NSString *searchString = searchController.searchBar.text;
+    if (searchString != nil) {
+        [self filterContentForSearchText:searchString scope:
+         [[self.searchController.searchBar scopeButtonTitles] objectAtIndex:[self.searchController.searchBar selectedScopeButtonIndex]]];
+        
+    }
+    
+    [self.listTable reloadData];
+}
+
+// called when text changes (including clear)
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    //NSLog(@"did change");
+    NSString *searchString = searchText;
+    if (searchString != nil) {
+        [self filterContentForSearchText:searchString scope:
+         [[self.searchController.searchBar scopeButtonTitles] objectAtIndex:[self.searchController.searchBar selectedScopeButtonIndex]]];
+        
+    }
+    if (self.filteredListContent.count > 0 )
+        self.isSearching = YES;
+    else
+        self.isSearching = FALSE;
+    
+    [self.listTable reloadData];
+}
+
+// called when keyboard search button pressed
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    //NSLog(@"Clicked");
+}
+
+// called when cancel button pressed
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    //NSLog(@"Clicked");
+    self.isSearching = NO;
+    [self.searchBar resignFirstResponder];
+    
+}
+//- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+
 -(void)populateTableData
 {
     NSMutableArray *songList = [NSMutableArray array];
@@ -77,7 +170,7 @@
     NSInteger catId = ([self isCategoryController]) ? self.categoryId : -1;
         [[Database instance] loadAllSongs:songList withCategoryId:(catId)];
 
-	DLog(@"%@",songList);
+	//DLog(@"%@",songList);
     self.titleArray = songList;
 }
 -(BOOL)isCategoryController
@@ -88,9 +181,10 @@
 - (void)viewDidUnload
 {
         // Save the state of the search UI so that it can be restored if the view is re-created.
-    self.searchWasActive = [self.searchDisplayController isActive];
-    self.savedSearchTerm = [self.searchDisplayController.searchBar text];
-    self.savedScopeButtonIndex = [self.searchDisplayController.searchBar selectedScopeButtonIndex];
+    self.searchWasActive = [self.searchController isActive];
+    self.savedSearchTerm = [self.searchController.searchBar text];
+    self.savedScopeButtonIndex = [self.searchController.searchBar selectedScopeButtonIndex];
+    
 	
 	self.filteredListContent = nil;
 }
@@ -102,39 +196,14 @@
 
      if (self.savedSearchTerm)
      {
-         [self.searchDisplayController setActive:self.searchWasActive];
-         [self.searchDisplayController.searchBar setSelectedScopeButtonIndex:self.savedScopeButtonIndex];
-         [self.searchDisplayController.searchBar setText:savedSearchTerm];
+         [self.searchController setActive:self.searchWasActive];
+         [self.searchController.searchBar setSelectedScopeButtonIndex:self.savedScopeButtonIndex];
+         [self.searchController.searchBar setText:savedSearchTerm];
          
          self.savedSearchTerm = nil;
      }
 
  }
-
-
-/*
- - (void)viewDidAppear:(BOOL)animated {
- [super viewDidAppear:animated];
- }
- */
-/*
- - (void)viewWillDisappear:(BOOL)animated {
- [super viewWillDisappear:animated];
- }
- */
-/*
- - (void)viewDidDisappear:(BOOL)animated {
- [super viewDidDisappear:animated];
- }
- */
-
-/*
- // Override to allow orientations other than the default portrait orientation.
- - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
- // Return YES for supported orientations
- return (interfaceOrientation == UIInterfaceOrientationPortrait);
- }
- */
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
@@ -156,7 +225,9 @@
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	//NSArray *titles = [titleDict allKeys];
-    if (tableView == self.searchDisplayController.searchResultsTableView)
+    
+    //NSLog(@"tableView numberOfRowsI  %lu",(unsigned long)self.filteredListContent.count);
+    if ([self isFiltering])
 	{
         return [self.filteredListContent count];
     }
@@ -192,13 +263,15 @@
 		accImageView  =  nil;
 	}
 	NSDictionary *titleDictObject  = nil;
-    if (tableView == self.searchDisplayController.searchResultsTableView)
+    if ([self isFiltering])
 	{
+       // NSLog(@"tableView cellForRowAtIndexPath   filtering  %lu  / %lu    ",(unsigned long)self.filteredListContent.count,(unsigned long)indexPath.row);
         titleDictObject = [self.filteredListContent objectAtIndex:indexPath.row];
     }
 	else
 	{
         titleDictObject = [self.titleArray objectAtIndex:indexPath.row];
+       // NSLog(@"tableView cellForRowAtIndexPath  %@",titleDictObject );
     }
     
 	UILabel * number = (UILabel * )[cell viewWithTag: 100];
@@ -214,12 +287,14 @@
 	NSInteger rowid = indexPath.row;
 	NSInteger sectionid  = 0;
     LyricsPageViewController *lyricsPage = nil;
-    if (tableView == self.searchDisplayController.searchResultsTableView)
+    if ([self isFiltering])
 	{
+           // NSLog(@"tableView didSelectRowAtIndexPath  %lu",(unsigned long)self.filteredListContent.count);
         lyricsPage = [[LyricsPageViewController alloc]initWithArray:self.filteredListContent sectionId:sectionid feedId:rowid];
     }
     else
     {
+       // NSLog(@"tableView didSelectRowAtIndexPath  Not filtering  %lu",(unsigned long)self.filteredListContent.count);
         lyricsPage = [[LyricsPageViewController alloc]initWithArray:self.titleArray sectionId:sectionid feedId:rowid];
     }
 
@@ -237,8 +312,7 @@
 	 */
 	
 	[self.filteredListContent removeAllObjects]; // First clear the filtered array.
-   
-    
+
 	for (NSDictionary *dict in self.titleArray)
 	{
             //if ([scope isEqualToString:@"All"] || [product.type isEqualToString:scope])
@@ -255,32 +329,39 @@
             }
 		}
 	}
+    
+    //NSLog(@"Filer COunt %lu",(unsigned long)self.filteredListContent.count);
 }
 
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+   
+      //NSLog(@"updateSearchResultsForSearchController %lu",(unsigned long)self.filteredListContent.count);
+    
+    NSString *searchString = searchController.searchBar.text;
+    if (searchString != nil) {
+        [self filterContentForSearchText:searchString scope:
+         [[self.searchController.searchBar scopeButtonTitles] objectAtIndex:[self.searchController.searchBar selectedScopeButtonIndex]]];
+        
+    }
+    
+    [self.listTable reloadData];
+}
+
+-(BOOL) isFiltering  {
+
+   //BOOL isFiltering  = self.searchController.isActive && (![self searchBarIsEmpty]);
+    return self.isSearching;
+//
+//    BOOL isFiltering  = self.searchBar.isActive && (![self searchBarIsEmpty]);
+//     NSLog(@"isFiltering %lu",(unsigned long)isFiltering);
+//    return isFiltering;
+}
+
+-(BOOL) searchBarIsEmpty{
+    return (self.searchController.searchBar.text.length == 0) ;
+}
 
 #pragma mark -
-#pragma mark UISearchDisplayController Delegate Methods
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
-{
-    [self filterContentForSearchText:searchString scope:
-     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
-    
-        // Return YES to cause the search result table view to be reloaded.
-    return YES;
-}
-
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
-{
-    [self filterContentForSearchText:[self.searchDisplayController.searchBar text] scope:
-     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
-    
-        // Return YES to cause the search result table view to be reloaded.
-    return YES;
-}
-
-
 -(IBAction)pop:(id)sender
 {
     [self.navigationController popViewControllerAnimated: YES];

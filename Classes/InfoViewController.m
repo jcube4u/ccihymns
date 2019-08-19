@@ -144,11 +144,8 @@ static NSString * urlInfoText = kInfoUrlApi;
 {
     if(![self dismissingViewViaDelegate])
     {
-        
         [self animateViewRemoval];
     }
-    
-
 }
 
 -(IBAction)popToRoot:(id)sender

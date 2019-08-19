@@ -53,15 +53,12 @@ NSString * const kSessionKey			= @"sessionKey";
 //*
 //* 
 //*******************************************************
-- (void) awakeFromNib
+- (void) checkNetwork
 {
-    [super awakeFromNib];
-	[[Reachability sharedReachability] setHostName: @"google.co.uk"];
-	[[Reachability sharedReachability] setNetworkStatusNotificationsEnabled: YES];
-	[self updateStatus];
-	
+    [[Reachability sharedReachability] setHostName: @"google.co.uk"];
+    [[Reachability sharedReachability] setNetworkStatusNotificationsEnabled: YES];
+    [self updateStatus];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:@"kNetworkReachabilityChangedNotification" object:nil];
-	
 }	
 
 //*******************************************************
@@ -71,53 +68,10 @@ NSString * const kSessionKey			= @"sessionKey";
 //*******************************************************
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
 	
+    [self checkNetwork];
+    
 	[[NSUserDefaults standardUserDefaults] setObject: nil forKey: kSessionKey];
 	
-	//[[UIApplication sharedApplication] setStatusBarStyle: UIStatusBarStyleBlackOpaque];
-	
-    CGFloat topInset = self.window.frame.size.height * 0.2125f;
-
-    //*********************************************************
-	//* Create array for modules and assign to module controller
-	//*********************************************************
-	
-    
-	modules = [[NSMutableArray alloc] init];
-	
-	[self getModuleNames];
-	
-    
-	moduleViewController = [[ModuleViewController alloc] initWithTopInset: topInset 
-															borderSpacing: 0.0
-													 maxHorizontalButtons: 1
-                                                          modules: modules];
-	
-    //UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:moduleViewController];
-    
-    [self.window setRootViewController:moduleViewController];
-	
-	[self checkUserDetails];
-    
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-    {
-        CGSize result = [[UIScreen mainScreen] bounds].size;
-//        if(result.height == 480)
-//        {
-//            // iPhone Classic
-//        }
-//        if(result.height == 568)
-//        {
-//            // iPhone 5
-//            CGRect frame =self.window.frame;
-//            frame.size.height = result.height ;
-//            self.window.frame =  frame;
-//            self.window.backgroundColor = [UIColor yellowColor];
-//        }
-    }
-    [window addSubview: moduleViewController.view];
-    [window makeKeyAndVisible];
-
-
 	// in case it was deferred because we started in the background
     @autoreleasepool {
         [[Database instance] initializeDatabase];
@@ -136,7 +90,6 @@ NSString * const kSessionKey			= @"sessionKey";
 - (void)dealloc {
 	[[NSNotificationCenter defaultCenter] removeObserver: self];
 	moduleViewController = nil;
-	modules  = nil;
 	window  = nil;
 }
 
@@ -153,31 +106,6 @@ NSString * const kSessionKey			= @"sessionKey";
 
 
 
-#pragma mark -
-#pragma mark Other methods
-- (void) getModuleNames
-{
-	[modules removeAllObjects];
-	
-	for (NSDictionary * moduleDict in [[NSBundle mainBundle] objectForInfoDictionaryKey: @"ModuleListLanguages"]) {
-		
-		position pos = {[[moduleDict objectForKey: @"positionX"] intValue], [[moduleDict objectForKey: @"positionY"] intValue]};
-		Module * module = [[Module alloc] initWithTitle: [moduleDict objectForKey: @"title"]
-													url: [moduleDict objectForKey: kModuleUrl]
-												   icon: [UIImage imageNamed: [moduleDict objectForKey: @"icon"]]
-											 controller: [moduleDict objectForKey: @"controller"]
-											   position: pos];
-		[modules addObject: module];
-		module = nil;
-	}
-}
-
-- (void) checkUserDetails
-{
-	
-	return;
-	
-}
 
 //*******************************************************
 //* updateStatus

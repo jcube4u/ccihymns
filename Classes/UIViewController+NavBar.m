@@ -31,10 +31,6 @@
 	self.navigationItem.titleView = nil;
 	self.navigationItem.titleView = label;
 	self.title = nil;
-	
-
-
-	
 
 }
 

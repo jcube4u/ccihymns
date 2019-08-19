@@ -164,16 +164,16 @@ static id _APICaller = nil;
 //*******************************************************
 - (void) runAsyncRequestWithURLString: (NSString *) requestString context: (void *) context error: (NSError **) error
 {
-	//NSLog(@"URL request: %@", requestString);
+	NSLog(@"URL request: %@", requestString);
 
-	if ([[AppInfo sharedInfo] remoteHostStatus] == NotReachable) {
-		
-		*error = [NSError errorWithDomain: @"FFSAPICallerErrorDomain" 
-									code: 999 
-								userInfo: [NSDictionary dictionaryWithObject: @"Connection to server failed." forKey: NSLocalizedDescriptionKey]];
-		return;
-	}
-	
+    if ([[AppInfo sharedInfo] remoteHostStatus] == NotReachable) {
+
+        *error = [NSError errorWithDomain: @"FFSAPICallerErrorDomain"
+                                    code: 999
+                                userInfo: [NSDictionary dictionaryWithObject: @"Connection to server failed." forKey: NSLocalizedDescriptionKey]];
+        return;
+    }
+//
 	//NSLog(requestString);
 	NSURL * requestUrl = [NSURL URLWithString: requestString];
 	
@@ -446,10 +446,10 @@ static id _APICaller = nil;
 					if(object == nil)
 					{
 						//id object = [self parseNodes: [resultElement children] level: level ];
-						NSString *elementName = [resultElement name];
 						//NSString *elementName = [resultElement name];
-						NSInteger count = [resultElement childCount];
-						NSLog(@"Parsing ERROR SKIPPING Object %@  - %d",elementName,count);
+						//NSString *elementName = [resultElement name];
+						//NSInteger count = [resultElement childCount];
+                        //NSLog(@"Parsing ERROR SKIPPING Object %@  - %ld",elementName,(long)count);
 						//continue;
 						//[attributesDict setObject: [resultElement name] forKey: [resultElement name]];
 						

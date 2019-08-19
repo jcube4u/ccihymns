@@ -125,7 +125,7 @@
 //                                                 buttonFrame.size.width,
 //                                                 buttonFrame.size.height);
         
-        [buttonController.view setCenter: CGPointMake(self.view.center.x, topInset + module.modulePosition.y * (buttonFrame.size.height + borderSpacing))];
+        [buttonController.view setCenter: CGPointMake(self.view.center.x, topInset + i * (buttonFrame.size.height + borderSpacing))];
 
 		buttonController.view.alpha = 0.0;
 		buttonController.view.tag = 100;

@@ -76,6 +76,7 @@ typedef enum  {
 @property (nonatomic, retain) IBOutlet UIButton *detectLink;
 @property (nonatomic, copy)   NSString    *webPageLink;
 
+
 @end
 
 @protocol ModuleViewControllerMainMenu

@@ -14,7 +14,7 @@
 
 @interface MahimaAppDelegate : NSObject <UIApplicationDelegate,UIAlertViewDelegate,UIAccelerometerDelegate> {
 	UIWindow *window;
-	NSMutableArray * modules;
+	
 	ModuleViewController * moduleViewController;
 	
 	NetworkStatus remoteHostStatus;

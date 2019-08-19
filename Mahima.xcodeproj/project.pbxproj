@@ -12,7 +12,6 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
-		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		4608C3291765228F00A181C5 /* menubg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4608C3271765228F00A181C5 /* menubg.png */; };
 		4608C32A1765228F00A181C5 /* menubg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4608C3281765228F00A181C5 /* menubg@2x.png */; };
 		461AC48D175695D600CC3F75 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 461AC48B175695D600CC3F75 /* refresh.png */; };
@@ -56,7 +55,6 @@
 		622B66AC1ECF25C50015504D /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 622B66AB1ECF25C50015504D /* Icon-76.png */; };
 		6274FBD810B0C36D00607950 /* FFSAPICaller.m in Sources */ = {isa = PBXBuildFile; fileRef = 6274FBB310B0C36D00607950 /* FFSAPICaller.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6274FBD910B0C36D00607950 /* ModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6274FBB810B0C36D00607950 /* ModuleViewController.m */; };
-		6274FBDA10B0C36D00607950 /* ModuleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6274FBB910B0C36D00607950 /* ModuleViewController.xib */; };
 		6274FBDB10B0C36D00607950 /* Module.m in Sources */ = {isa = PBXBuildFile; fileRef = 6274FBBB10B0C36D00607950 /* Module.m */; };
 		6274FBDC10B0C36D00607950 /* ModuleButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6274FBBD10B0C36D00607950 /* ModuleButtonController.m */; };
 		6274FBDD10B0C36D00607950 /* ModuleButtonController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6274FBBE10B0C36D00607950 /* ModuleButtonController.xib */; };
@@ -87,6 +85,7 @@
 		62AD7F501EA56DAE000D350A /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62AD7F4F1EA56DAE000D350A /* Media.xcassets */; };
 		62AD7F521EA583E9000D350A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 62AD7F511EA583E9000D350A /* libc++.tbd */; };
 		62C3BBCA22F0455F00447E0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62C3BBC922F0455F00447E0A /* LaunchScreen.storyboard */; };
+		62C6D4EC22FC52AB007295B6 /* ModuleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62C6D4EB22FC52AB007295B6 /* ModuleViewController.storyboard */; };
 		62D0585B10B0DB330065706B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D0585A10B0DB330065706B /* CoreLocation.framework */; };
 		62D0586C10B0DB960065706B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 62D0586710B0DB960065706B /* Icon.png */; };
 		62D8B36B11858DE5009F7804 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D8B36A11858DE5009F7804 /* MessageUI.framework */; };
@@ -204,7 +203,6 @@
 		6274FBB310B0C36D00607950 /* FFSAPICaller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFSAPICaller.m; sourceTree = "<group>"; };
 		6274FBB710B0C36D00607950 /* ModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleViewController.h; sourceTree = "<group>"; };
 		6274FBB810B0C36D00607950 /* ModuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleViewController.m; sourceTree = "<group>"; };
-		6274FBB910B0C36D00607950 /* ModuleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModuleViewController.xib; sourceTree = "<group>"; };
 		6274FBBA10B0C36D00607950 /* Module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Module.h; sourceTree = "<group>"; };
 		6274FBBB10B0C36D00607950 /* Module.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Module.m; sourceTree = "<group>"; };
 		6274FBBC10B0C36D00607950 /* ModuleButtonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleButtonController.h; sourceTree = "<group>"; };
@@ -257,6 +255,7 @@
 		62AD7F4F1EA56DAE000D350A /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Resources/Media.xcassets; sourceTree = "<group>"; };
 		62AD7F511EA583E9000D350A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		62C3BBC922F0455F00447E0A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		62C6D4EB22FC52AB007295B6 /* ModuleViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ModuleViewController.storyboard; sourceTree = "<group>"; };
 		62D0585A10B0DB330065706B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		62D0586710B0DB960065706B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Images/Icon.png; sourceTree = "<group>"; };
 		62D8B36A11858DE5009F7804 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -628,7 +627,7 @@
 			children = (
 				6274FBB710B0C36D00607950 /* ModuleViewController.h */,
 				6274FBB810B0C36D00607950 /* ModuleViewController.m */,
-				6274FBB910B0C36D00607950 /* ModuleViewController.xib */,
+				62C6D4EB22FC52AB007295B6 /* ModuleViewController.storyboard */,
 				6274FBBA10B0C36D00607950 /* Module.h */,
 				6274FBBB10B0C36D00607950 /* Module.m */,
 				6274FBBC10B0C36D00607950 /* ModuleButtonController.h */,
@@ -749,7 +748,6 @@
 				LastUpgradeCheck = 0450;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = 9583TPSZ4Z;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -778,8 +776,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
-				6274FBDA10B0C36D00607950 /* ModuleViewController.xib in Resources */,
 				6274FBDD10B0C36D00607950 /* ModuleButtonController.xib in Resources */,
 				6274FBDF10B0C36D00607950 /* InfoViewController.xib in Resources */,
 				6274FBE310B0C36D00607950 /* LyricsPageViewController.xib in Resources */,
@@ -805,6 +801,7 @@
 				468895C4174D8E83000F2A44 /* arrow-left@2x.png in Resources */,
 				468895C5174D8E83000F2A44 /* arrow-right.png in Resources */,
 				468895C6174D8E83000F2A44 /* arrow-right@2x.png in Resources */,
+				62C6D4EC22FC52AB007295B6 /* ModuleViewController.storyboard in Resources */,
 				466592A51752A353003B7E0E /* Default-568h@2x.png in Resources */,
 				466592A61752A353003B7E0E /* Default@2x.png in Resources */,
 				622B66AA1ECF255F0015504D /* Icon-60.png in Resources */,
@@ -884,9 +881,10 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = dist.plist;
-				CODE_SIGN_IDENTITY = "iPhone Developer: jimmy benson (7D73P7W2VK)";
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 9583TPSZ4Z;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -900,7 +898,7 @@
 				INFOPLIST_FILE = "Mahima-Info.plist";
 				INSTALL_GROUP = "";
 				INSTALL_OWNER = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes\"",
@@ -909,11 +907,12 @@
 					"\"$(SRCROOT)/TestFlightSDK1\"",
 				);
 				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mahima.cccHymns;
 				PRODUCT_NAME = CCCHymns;
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CD10F935-10A4-41D8-AF3D-6BE88AB754D2";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -925,9 +924,10 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = dist.plist;
-				CODE_SIGN_IDENTITY = "iPhone Developer: jimmy benson (7D73P7W2VK)";
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = 9583TPSZ4Z;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -939,7 +939,7 @@
 				INFOPLIST_FILE = "Mahima-Info.plist";
 				INSTALL_GROUP = "";
 				INSTALL_OWNER = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes\"",
@@ -948,11 +948,13 @@
 					"\"$(SRCROOT)/TestFlightSDK1\"",
 				);
 				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mahima.cccHymns;
 				PRODUCT_NAME = CCCHymns;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -967,10 +969,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "Carol Book";
-				PROVISIONING_PROFILE = "2EF71808-C08A-4E99-AEAC-4445396CB878";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2EF71808-C08A-4E99-AEAC-4445396CB878";
 				SDKROOT = iphoneos;
 			};
 			name = Distribution;
@@ -983,9 +984,10 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = dist.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: J Benson (9583TPSZ4Z)";
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = 9583TPSZ4Z;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -997,7 +999,7 @@
 				INFOPLIST_FILE = "Mahima-Info.plist";
 				INSTALL_GROUP = "";
 				INSTALL_OWNER = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes\"",
@@ -1006,10 +1008,12 @@
 					"\"$(SRCROOT)/TestFlightSDK1\"",
 				);
 				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mahima.cccHymns;
 				PRODUCT_NAME = CCCHymns;
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0C2AC72A-1ABD-469D-8833-DACFEDA7BFC9";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Distribution;
 		};
@@ -1023,10 +1027,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "Carol Book";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "32CCBFC6-F84F-4765-8788-3E15AFFF94E4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1041,9 +1045,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "Carol Book";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "68E20AD8-931A-4FAB-A1E2-8885868521C4";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -1059,7 +1063,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "Carol Book";
 				SDKROOT = iphoneos;
@@ -1074,9 +1078,10 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = dist.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: J Benson (9583TPSZ4Z)";
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 9583TPSZ4Z;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1091,7 +1096,7 @@
 				INFOPLIST_FILE = "Mahima-Info.plist";
 				INSTALL_GROUP = "";
 				INSTALL_OWNER = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes\"",
@@ -1100,11 +1105,13 @@
 					"\"$(SRCROOT)/TestFlightSDK1\"",
 				);
 				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mahima.cccHymns;
 				PRODUCT_NAME = CCCHymns;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Adhoc;
 		};

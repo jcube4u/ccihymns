@@ -37,8 +37,8 @@
 
 //#define kUrlApi					@"http://ourcss.com/mobile/iPhone/cccihymns/"
 //#define kInfoUrlApi				@"http://ourcss.com/mobile/iPhone/cccihymns/info.html";
-#define kUrlApi                    @"https://hayngels.com/ccihymns/1.0/"
-#define kInfoUrlApi                @"https://hayngels.com/ccihymns/1.0/info/info.html";
+#define kUrlApi                    @"http://hayngels.com/ccihymns/1.0/"
+#define kInfoUrlApi                @"http://hayngels.com/ccihymns/1.0/info/info.html";
 
 #define kFileNameSongListEng			@"English.xml"
 #define kFileNameSongListYoruba			@"Yourba.xml"

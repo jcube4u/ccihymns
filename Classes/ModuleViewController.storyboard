@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="u5n-7R-qS2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Module View Controller-->
+        <scene sceneID="snW-1U-TI6">
+            <objects>
+                <viewController id="u5n-7R-qS2" customClass="ModuleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vWH-bJ-iNA"/>
+                        <viewControllerLayoutGuide type="bottom" id="BX5-rr-Yh5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" horizontalHuggingPriority="277" verticalHuggingPriority="1" horizontalCompressionResistancePriority="578" verticalCompressionResistancePriority="1" insetsLayoutMarginsFromSafeArea="NO" id="wjH-4M-Iy7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" image="ccbackground" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJf-Xd-uAz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9l-XS-rSA">
+                                <rect key="frame" x="23" y="32" width="31" height="40"/>
+                                <color key="backgroundColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dma-UQ-8xa"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="kBQ-jv-BvA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="17"/>
+                                <state key="normal" title="Info">
+                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="infoButtonTapped:" destination="u5n-7R-qS2" eventType="touchUpInside" id="Ixo-Sg-DSf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jJf-Xd-uAz" secondAttribute="trailing" id="7HG-PK-YuF"/>
+                            <constraint firstItem="jJf-Xd-uAz" firstAttribute="leading" secondItem="wjH-4M-Iy7" secondAttribute="leading" id="Ibp-7O-jU3"/>
+                            <constraint firstItem="i9l-XS-rSA" firstAttribute="leading" secondItem="wjH-4M-Iy7" secondAttribute="leading" constant="23" id="awj-b5-1yv"/>
+                            <constraint firstAttribute="bottom" secondItem="jJf-Xd-uAz" secondAttribute="bottom" id="fss-oo-pKk"/>
+                            <constraint firstItem="jJf-Xd-uAz" firstAttribute="top" secondItem="wjH-4M-Iy7" secondAttribute="top" id="q1a-sL-qqB"/>
+                            <constraint firstItem="i9l-XS-rSA" firstAttribute="top" secondItem="wjH-4M-Iy7" secondAttribute="top" constant="32" id="r3Z-Yr-2yy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cCl-ah-PxM" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="23.199999999999999" y="27.436281859070466"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ccbackground" width="320" height="480"/>
+    </resources>
+</document>

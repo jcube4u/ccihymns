@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface SongListViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UISearchDisplayDelegate, UISearchBarDelegate> {
+@interface SongListViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating> {
     
 	NSMutableArray	*titleArray;
 	
@@ -29,6 +29,8 @@
     NSInteger		savedScopeButtonIndex;
     
     BOOL			searchWasActive;
+    
+    UISearchController *searchController;
 }
 
 
@@ -40,7 +42,7 @@
 
 @property(nonatomic,retain) IBOutlet UILabel            *titleLabel;
 
-@property(nonatomic,retain) IBOutlet UIButton            *languageButton;
+//@property(nonatomic,retain) IBOutlet UIButton            *languageButton;
 
 @property (nonatomic, retain) NSMutableArray *filteredListContent;
 
@@ -54,6 +56,10 @@
 
 @property (nonatomic) BOOL searchWasActive;
 
+@property (strong, nonatomic) UISearchController
+*searchController;
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 - (IBAction)pop:(id)sender;
 - (IBAction)popToRoot:(id)sender;
 - (IBAction)popToRootWithLanguageToggle:(id)sender;
