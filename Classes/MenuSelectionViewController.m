@@ -112,19 +112,10 @@
 //		//* Create module border image view
 //		//*******************************************************
         NSString *title = module.title;
-        ModuleButtonController * buttonController = [[ModuleButtonController alloc] initWithModuleSelectionLauncher:self buttonImage:module.icon label:title tag:i fontSize:22];
+        ModuleButtonController * buttonController = [[ModuleButtonController alloc] initWithModuleSelectionLauncher:self buttonImage:module.icon label:title tag:i fontSize:kDefaultMenuFontSize];
        
 		CGRect buttonFrame = buttonController.view.frame;
-		
-//        CGFloat leftInset = (self.view.frame.size.width - (maxHorizontalButtons * buttonFrame.size.width) -
-//                             ((maxHorizontalButtons - 1) * borderSpacing)) / 2.0;
-//        CGFloat xPosition = leftInset + module.modulePosition.x * (buttonFrame.size.width + borderSpacing);
-//        NSLog(@"Left Inset %f pos x %f",leftInset, xPosition);
-//        buttonController.view.frame = CGRectMake(xPosition,
-//                                                 topInset + module.modulePosition.y * (buttonFrame.size.height + borderSpacing),
-//                                                 buttonFrame.size.width,
-//                                                 buttonFrame.size.height);
-        
+		       
         [buttonController.view setCenter: CGPointMake(self.view.center.x, topInset + i * (buttonFrame.size.height + borderSpacing))];
 
 		buttonController.view.alpha = 0.0;
@@ -211,7 +202,7 @@
 	{
 		int elapsedTime = -[savedDate timeIntervalSinceNow];
 		/// Is the last loaded data older than a  30 days
-		if(elapsedTime > (24*60*60 *1))
+		if(elapsedTime > (24*60*60 *30))
 		{
 			refreshData = YES;
 		}

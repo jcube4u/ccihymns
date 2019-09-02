@@ -87,6 +87,8 @@ extern NSString * const keyTitleName;
 
 // FontSixe
 #define kSavedFontSize          @"SavedFontSize"
+#define kDefaultMenuFontSize    26
+#define kDefaultCellFontSize    24
 
 // Languages
 #define kSavedLanguage          @"SavedLanguage"

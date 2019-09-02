@@ -21,6 +21,7 @@ UITableViewDataSource> {
 	
 }
 @property(nonatomic,strong)	NSMutableArray *categoriesArray;
+@property(nonatomic,strong) NSMutableArray *expandedFavoritesList;
 @property(nonatomic,strong)	IBOutlet UITableView	*listTable;
 @property (nonatomic, strong) id mainMenu;
 - (IBAction)pop:(id)sender;

@@ -70,7 +70,8 @@
     
     if (@available(iOS 11.0, *)) {
         //self.navigationItem.searchController = searchController;
-        self.searchBar = self.searchController.searchBar;
+        //self.searchBar = self.searchController.searchBar;
+        self.searchBar.showsCancelButton = YES;
         self.searchBar.delegate = self;
     } else {
         self.listTable.tableHeaderView =  self.searchController.searchBar;
@@ -92,6 +93,7 @@
 	[self.listTable reloadData];
     
 }
+
 // return NO to not become first responder
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
 {
@@ -103,6 +105,7 @@
 {
     // adjust layout for keyboard display
      //NSLog(@"searchBarTextDidEndEditing %lu",(unsigned long)self.filteredListContent.count);
+    self.searchBar = searchBar;
 }
 
 // return NO to not resign first responder
@@ -110,15 +113,14 @@
 {
     // adjust layout for no keyboar
     
+    [searchBar resignFirstResponder];
     return YES;
 }
 
 // called when text ends editing
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
 {
-    
     //NSLog(@"searchBarTextDidEndEditing %lu",(unsigned long)self.filteredListContent.count);
-    
     NSString *searchString = searchController.searchBar.text;
     if (searchString != nil) {
         [self filterContentForSearchText:searchString scope:
@@ -134,15 +136,18 @@
 {
     //NSLog(@"did change");
     NSString *searchString = searchText;
-    if (searchString != nil) {
+    if (searchString != nil && searchText.length > 0) {
         [self filterContentForSearchText:searchString scope:
          [[self.searchController.searchBar scopeButtonTitles] objectAtIndex:[self.searchController.searchBar selectedScopeButtonIndex]]];
         
     }
     if (self.filteredListContent.count > 0 )
         self.isSearching = YES;
-    else
+    else {
+        [searchBar resignFirstResponder];
+        [self.filteredListContent removeAllObjects];
         self.isSearching = FALSE;
+    }
     
     [self.listTable reloadData];
 }
@@ -150,7 +155,10 @@
 // called when keyboard search button pressed
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
+    
     //NSLog(@"Clicked");
+    [searchBar resignFirstResponder];
+    [searchBar endEditing:YES];
 }
 
 // called when cancel button pressed
@@ -158,7 +166,9 @@
 {
     //NSLog(@"Clicked");
     self.isSearching = NO;
-    [self.searchBar resignFirstResponder];
+    searchBar.text = nil;
+    [searchBar resignFirstResponder];
+    [searchBar endEditing:YES];
     
 }
 //- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
@@ -189,11 +199,11 @@
 	self.filteredListContent = nil;
 }
 
-
-
  - (void)viewWillAppear:(BOOL)animated {
      [super viewWillAppear:animated];
-
+     [self.filteredListContent removeAllObjects];
+     [self.searchBar resignFirstResponder];
+     
      if (self.savedSearchTerm)
      {
          [self.searchController setActive:self.searchWasActive];
@@ -248,7 +258,7 @@
 		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 		cell.backgroundColor = [UIColor clearColor];
         
-        UILabel *numberLabel =  [[UILabel alloc] initWithFrame:CGRectMake(LEFT_TEXT_OFFSET_ITEM_NAME, 8, self.view.frame.size.width - (LEFT_TEXT_OFFSET_ITEM_NAME + 25), 20)];
+        UILabel *numberLabel =  [[UILabel alloc] initWithFrame:CGRectMake(LEFT_TEXT_OFFSET_ITEM_NAME, 8, self.view.frame.size.width - (LEFT_TEXT_OFFSET_ITEM_NAME + 25), kDefaultCellFontSize)];
 		numberLabel.backgroundColor = [UIColor clearColor];
 		numberLabel.textColor = [UIColor blackColor];
 		numberLabel.tag = 100;
@@ -282,8 +292,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
+    [self.searchBar endEditing:YES];
+    [self.searchController.searchBar endEditing:YES];
 	[tableView deselectRowAtIndexPath: indexPath animated: YES];
 	
+    
 	NSInteger rowid = indexPath.row;
 	NSInteger sectionid  = 0;
     LyricsPageViewController *lyricsPage = nil;
@@ -319,8 +332,6 @@
 		{
             
             NSString * titleSearch = [NSString stringWithFormat:@"%@ %@",[dict objectForKey:keySongNo],[dict objectForKey:keySongName]];
-//			NSComparisonResult result = [titleSearch compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch| NSNumericSearch| NSLiteralSearch) range:NSMakeRange(0, [searchText length])];
-//            if (result == NSOrderedSame)
             
             NSRange descriptionRange = [titleSearch rangeOfString:searchText options:NSCaseInsensitiveSearch];
             if(descriptionRange.location != NSNotFound)

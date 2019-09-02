@@ -34,20 +34,6 @@ NSString * const kCloseModule = @"kCloseModule";
 webPageLink;//,delegate;
 @synthesize infoController = _infoController;
 
-//- (id) initWithTopInset: (CGFloat) theTopInset
-//          borderSpacing: (CGFloat) theBorderSpacing
-//   maxHorizontalButtons: (int) maxHorizButtons
-//                modules: (NSArray *) theModules
-//{
-//    self = [super init];
-//    if (self != nil) {
-//        topInset = theTopInset;
-//        borderSpacing = theBorderSpacing;
-//        maxHorizontalButtons = maxHorizButtons;
-//        modules = theModules;
-//    }
-//    return self;
-//}
 
 - (void)dealloc {
 	[[NSNotificationCenter defaultCenter] removeObserver: self];
@@ -223,29 +209,6 @@ webPageLink;//,delegate;
 	[UIView commitAnimations];
 
 }
--(NSString *) GetUrl:(NSString *)moduleName tagId:(NSInteger) tagId
-{
-	NSString *urlString = nil;
-	
-	if([moduleName isEqualToString:@"MUSE STORE"])
-	{
-		NSString *sessionKey = nil;
-		sessionKey = [[NSUserDefaults standardUserDefaults] objectForKey: kSessionKey];
-		/// We didnt manage to get the session id so sign in the respective class
-		if(sessionKey == nil)
-			urlString = [NSString stringWithFormat:@"%@=", [[modules objectAtIndex: tagId] url]];
-		else
-			urlString = [NSString stringWithFormat:@"%@=%@", [[modules objectAtIndex: tagId] url], sessionKey];
-		NSLog(@"URL - %@",urlString);
-	}
-	else
-	{
-	   urlString  =  [NSString stringWithFormat:@"%@",[[modules objectAtIndex: tagId] url]];
-	}
-	
-	return urlString;
-	
-}
 
 - (void) closeModule: (id) module
 {
@@ -286,7 +249,7 @@ webPageLink;//,delegate;
 																							   buttonImage: nil
 																									 label: module.title 
 																									   tag: i
-                                                                                                  fontSize:28];
+                                                                                                  fontSize:30];
 
 		CGRect buttonFrame = buttonController.view.frame;
 		

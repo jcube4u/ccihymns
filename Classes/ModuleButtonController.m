@@ -3,6 +3,7 @@
 
 
 #import "ModuleButtonController.h"
+#import "Constants.h"
 
 
 @implementation ModuleButtonController
@@ -50,7 +51,7 @@
 	self.view.tag = tag;
 	[button addTarget: launcher action: @selector(launchModule:) forControlEvents: UIControlEventTouchUpInside];
 	
-	label = [[UILabel alloc] initWithFrame: CGRectMake(0, 10, 200, 28)];
+	label = [[UILabel alloc] initWithFrame: CGRectMake(0, 10, 200, (kDefaultMenuFontSize + 6))];
 	label.text = title;
     label.font = [UIFont fontWithName:@"TrebuchetMS" size:size];
 	label.textColor = [UIColor darkGrayColor];

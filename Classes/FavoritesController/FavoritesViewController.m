@@ -32,7 +32,7 @@
 @end
 
 @implementation FavoritesViewController
-@synthesize mainMenu,listTable,categoriesArray;
+@synthesize mainMenu,listTable,categoriesArray,expandedFavoritesList;
 @synthesize buttonToggleLanguage = _buttonToggleLanguage;
 @synthesize buttonMenu = _buttonMenu;
 @synthesize noResultsText = _noResultsText;
@@ -113,7 +113,7 @@
 		cell.selectionStyle = UITableViewCellSelectionStyleGray;
 		cell.backgroundColor = [UIColor clearColor];
         
-        UILabel *numberLabel =  [[UILabel alloc] initWithFrame:CGRectMake(LEFT_TEXT_OFFSET_ITEM_NAME, 8, self.view.frame.size.width - (3 * LEFT_TEXT_OFFSET_ITEM_NAME), 20)];
+        UILabel *numberLabel =  [[UILabel alloc] initWithFrame:CGRectMake(LEFT_TEXT_OFFSET_ITEM_NAME, 8, self.view.frame.size.width - (3 * LEFT_TEXT_OFFSET_ITEM_NAME), kDefaultCellFontSize)];
 		numberLabel.backgroundColor = [UIColor clearColor];
 		numberLabel.textColor = [UIColor blackColor];
 		numberLabel.tag = 100;
@@ -128,7 +128,13 @@
 	}
 	NSDictionary *langDict =  [categoriesArray objectAtIndex: indexPath.row];
 	UILabel * langaugeName = (UILabel * )[cell viewWithTag: 100];
-	langaugeName.text = [[langDict objectForKey:keyCategoryNameDB] capitalizedString];
+    NSString *songName = [[langDict objectForKey:keyCategoryNameDB] capitalizedString];
+    
+    
+    NSDictionary *expandedDict =  [self.expandedFavoritesList objectAtIndex:indexPath.row];
+    NSString *songNumber = [expandedDict objectForKey:keySongNo];
+    
+	langaugeName.text = [NSString stringWithFormat: @"%@ - %@",songNumber, songName];
     return cell;
 }
 
@@ -140,17 +146,17 @@
 	NSInteger sectionid  = 0;
     LyricsPageViewController *lyricsPage = nil;
 
-    NSMutableArray *songsList = [NSMutableArray array];
+//    NSMutableArray *songsList = [NSMutableArray array];
+//
+//
+//    for(int i = 0; i< self.categoriesArray.count;i++)
+//    {
+//        NSDictionary *langDict =  [categoriesArray objectAtIndex:i];
+//        NSString *name = [langDict objectForKey:keyCategoryNameDB];
+//        [[Database instance] loadSong:songsList withName:name];
+//    }
     
-    
-    for(int i = 0; i< self.categoriesArray.count;i++)
-    {
-        NSDictionary *langDict =  [categoriesArray objectAtIndex:i];
-        NSString *name = [langDict objectForKey:keyCategoryNameDB];
-        [[Database instance] loadSong:songsList withName:name];
-    }
-    
-    lyricsPage = [[LyricsPageViewController alloc]initWithArray:songsList sectionId:sectionid feedId:rowid];
+    lyricsPage = [[LyricsPageViewController alloc]initWithArray:expandedFavoritesList sectionId:sectionid feedId:rowid];
     
 	[[self navigationController] pushViewController:lyricsPage animated:YES];
 }
@@ -169,8 +175,18 @@
 	/// Load Languages from DB
 	NSMutableArray *categoriesList = [NSMutableArray array];
 	[[Database instance] loadAllFavorites:categoriesList];
+    
+    self.expandedFavoritesList = [NSMutableArray array];
+    
 	if([categoriesList count] > 0){
 		self.categoriesArray =  [[NSMutableArray alloc] initWithArray:categoriesList];
+        
+        for(int i = 0; i< self.categoriesArray.count;i++)
+        {
+            NSDictionary *langDict =  [self.categoriesArray objectAtIndex:i];
+            NSString *name = [langDict objectForKey:keyCategoryNameDB];
+            [[Database instance] loadSong:self.expandedFavoritesList withName:name];
+        }
 		return !languagesLoaded;
 	}
     
